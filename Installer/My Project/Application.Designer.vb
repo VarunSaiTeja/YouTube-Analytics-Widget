@@ -32,7 +32,7 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()> _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.YouTube_Analytics_Widget.widget
+            Me.MainForm = Global.Installer.welcome
         End Sub
     End Class
 End Namespace
