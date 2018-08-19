@@ -22,6 +22,7 @@ Partial Class settings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(settings))
         Me.id_textbox = New System.Windows.Forms.TextBox()
         Me.channel_id = New System.Windows.Forms.Label()
         Me.update_id = New System.Windows.Forms.Button()
@@ -29,6 +30,7 @@ Partial Class settings
         Me.Duration = New System.Windows.Forms.ComboBox()
         Me.count_view = New System.Windows.Forms.Label()
         Me.formatting = New System.Windows.Forms.ComboBox()
+        Me.startup = New System.Windows.Forms.CheckBox()
         Me.SuspendLayout()
         '
         'id_textbox
@@ -97,11 +99,25 @@ Partial Class settings
         Me.formatting.Size = New System.Drawing.Size(137, 21)
         Me.formatting.TabIndex = 6
         '
+        'startup
+        '
+        Me.startup.AutoSize = True
+        Me.startup.Checked = True
+        Me.startup.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.startup.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.startup.Location = New System.Drawing.Point(81, 156)
+        Me.startup.Name = "startup"
+        Me.startup.Size = New System.Drawing.Size(137, 21)
+        Me.startup.TabIndex = 17
+        Me.startup.Text = "Auto Start On Boot"
+        Me.startup.UseVisualStyleBackColor = True
+        '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(355, 189)
+        Me.Controls.Add(Me.startup)
         Me.Controls.Add(Me.formatting)
         Me.Controls.Add(Me.count_view)
         Me.Controls.Add(Me.Duration)
@@ -110,6 +126,7 @@ Partial Class settings
         Me.Controls.Add(Me.channel_id)
         Me.Controls.Add(Me.id_textbox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "settings"
         Me.Text = "YouTube Analytics Widget"
         Me.ResumeLayout(False)
@@ -124,4 +141,5 @@ Partial Class settings
     Friend WithEvents Duration As ComboBox
     Friend WithEvents count_view As Label
     Friend WithEvents formatting As ComboBox
+    Friend WithEvents startup As CheckBox
 End Class

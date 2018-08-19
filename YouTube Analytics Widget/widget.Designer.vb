@@ -23,6 +23,7 @@ Partial Class widget
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(widget))
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ChangeLocationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateNowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -168,7 +169,9 @@ Partial Class widget
         Me.Controls.Add(Me.channel_name)
         Me.Controls.Add(Me.Channel_logo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "widget"
+        Me.ShowInTaskbar = False
         Me.Text = "YouTube Analytics Widget"
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.Channel_logo, System.ComponentModel.ISupportInitialize).EndInit()
