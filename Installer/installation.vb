@@ -16,7 +16,8 @@ Public Class installation
 
             My.Computer.FileSystem.CopyDirectory(Application.StartupPath, install_path, True)
 
-            Registry.SetValue(reg_path, "Channel ID", ChannelDetails.id)
+            Registry.SetValue(reg_path, "Channel ID", ChannelDetails.id.Text)
+            Registry.SetValue(reg_path, "Channel Name", ChannelDetails.gbox.Text)
             Registry.SetValue(reg_path, "Subscribers", ChannelDetails.sub_count.Text)
             Registry.SetValue(reg_path, "Views", ChannelDetails.view_count.Text)
             Registry.SetValue(reg_path, "Videos", ChannelDetails.videos_count.Text)

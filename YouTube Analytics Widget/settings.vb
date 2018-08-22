@@ -6,7 +6,12 @@ Public Class settings
 
     Private Sub update_id_Click(sender As Object, e As EventArgs) Handles update_id.Click
         Registry.SetValue(reg_path, "Channel ID", id_textbox.Text)
-        widget.update_now()
+        Try
+            widget.get_snip()
+            widget.get_stat()
+        Catch ex As Exception
+            MsgBox("Check Your Internet Connection")
+        End Try
     End Sub
 
     Private Sub settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -9,6 +9,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Installer", "Installer\Inst
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Uninstaller", "Uninstaller\Uninstaller.vbproj", "{68274DCC-D1F2-45CA-B434-4C30649D2A07}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Updater", "Updater\Updater.vbproj", "{C64804D9-FF15-442C-B3F5-16404B83C92A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{68274DCC-D1F2-45CA-B434-4C30649D2A07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68274DCC-D1F2-45CA-B434-4C30649D2A07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68274DCC-D1F2-45CA-B434-4C30649D2A07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64804D9-FF15-442C-B3F5-16404B83C92A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64804D9-FF15-442C-B3F5-16404B83C92A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64804D9-FF15-442C-B3F5-16404B83C92A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64804D9-FF15-442C-B3F5-16404B83C92A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

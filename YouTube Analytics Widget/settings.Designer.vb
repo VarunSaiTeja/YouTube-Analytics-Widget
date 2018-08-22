@@ -31,11 +31,12 @@ Partial Class settings
         Me.count_view = New System.Windows.Forms.Label()
         Me.formatting = New System.Windows.Forms.ComboBox()
         Me.startup = New System.Windows.Forms.CheckBox()
+        Me.title = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'id_textbox
         '
-        Me.id_textbox.Location = New System.Drawing.Point(78, 12)
+        Me.id_textbox.Location = New System.Drawing.Point(141, 48)
         Me.id_textbox.Name = "id_textbox"
         Me.id_textbox.Size = New System.Drawing.Size(184, 20)
         Me.id_textbox.TabIndex = 0
@@ -44,7 +45,7 @@ Partial Class settings
         '
         Me.channel_id.AutoSize = True
         Me.channel_id.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.channel_id.Location = New System.Drawing.Point(7, 14)
+        Me.channel_id.Location = New System.Drawing.Point(29, 53)
         Me.channel_id.Name = "channel_id"
         Me.channel_id.Size = New System.Drawing.Size(65, 15)
         Me.channel_id.TabIndex = 1
@@ -52,9 +53,9 @@ Partial Class settings
         '
         'update_id
         '
-        Me.update_id.Location = New System.Drawing.Point(268, 9)
+        Me.update_id.Location = New System.Drawing.Point(149, 206)
         Me.update_id.Name = "update_id"
-        Me.update_id.Size = New System.Drawing.Size(75, 23)
+        Me.update_id.Size = New System.Drawing.Size(87, 23)
         Me.update_id.TabIndex = 2
         Me.update_id.Text = "Update"
         Me.update_id.UseVisualStyleBackColor = True
@@ -63,7 +64,7 @@ Partial Class settings
         '
         Me.update_interval.AutoSize = True
         Me.update_interval.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.update_interval.Location = New System.Drawing.Point(7, 107)
+        Me.update_interval.Location = New System.Drawing.Point(29, 131)
         Me.update_interval.Name = "update_interval"
         Me.update_interval.Size = New System.Drawing.Size(87, 15)
         Me.update_interval.TabIndex = 3
@@ -74,7 +75,7 @@ Partial Class settings
         Me.Duration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Duration.FormattingEnabled = True
         Me.Duration.Items.AddRange(New Object() {"1 Hour", "3 Hours", "6 Hours", "12 Hours", "1 Day"})
-        Me.Duration.Location = New System.Drawing.Point(131, 105)
+        Me.Duration.Location = New System.Drawing.Point(141, 129)
         Me.Duration.Name = "Duration"
         Me.Duration.Size = New System.Drawing.Size(87, 21)
         Me.Duration.TabIndex = 4
@@ -83,7 +84,7 @@ Partial Class settings
         '
         Me.count_view.AutoSize = True
         Me.count_view.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.count_view.Location = New System.Drawing.Point(7, 60)
+        Me.count_view.Location = New System.Drawing.Point(29, 90)
         Me.count_view.Name = "count_view"
         Me.count_view.Size = New System.Drawing.Size(68, 15)
         Me.count_view.TabIndex = 5
@@ -94,7 +95,7 @@ Partial Class settings
         Me.formatting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.formatting.FormattingEnabled = True
         Me.formatting.Items.AddRange(New Object() {"Numbers with comma", "Shortcuts B/M/K"})
-        Me.formatting.Location = New System.Drawing.Point(81, 60)
+        Me.formatting.Location = New System.Drawing.Point(141, 90)
         Me.formatting.Name = "formatting"
         Me.formatting.Size = New System.Drawing.Size(137, 21)
         Me.formatting.TabIndex = 6
@@ -105,18 +106,29 @@ Partial Class settings
         Me.startup.Checked = True
         Me.startup.CheckState = System.Windows.Forms.CheckState.Checked
         Me.startup.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.startup.Location = New System.Drawing.Point(81, 156)
+        Me.startup.Location = New System.Drawing.Point(141, 169)
         Me.startup.Name = "startup"
         Me.startup.Size = New System.Drawing.Size(137, 21)
         Me.startup.TabIndex = 17
         Me.startup.Text = "Auto Start On Boot"
         Me.startup.UseVisualStyleBackColor = True
         '
+        'title
+        '
+        Me.title.AutoSize = True
+        Me.title.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.title.Location = New System.Drawing.Point(144, 9)
+        Me.title.Name = "title"
+        Me.title.Size = New System.Drawing.Size(84, 25)
+        Me.title.TabIndex = 18
+        Me.title.Text = "Settings"
+        '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(355, 189)
+        Me.ClientSize = New System.Drawing.Size(377, 243)
+        Me.Controls.Add(Me.title)
         Me.Controls.Add(Me.startup)
         Me.Controls.Add(Me.formatting)
         Me.Controls.Add(Me.count_view)
@@ -142,4 +154,5 @@ Partial Class settings
     Friend WithEvents count_view As Label
     Friend WithEvents formatting As ComboBox
     Friend WithEvents startup As CheckBox
+    Friend WithEvents title As Label
 End Class

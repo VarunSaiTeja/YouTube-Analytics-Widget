@@ -17,7 +17,12 @@ Public Class widget
 
     Private Sub widget_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Location = New System.Drawing.Point(My.Settings.widget_location.X, My.Settings.widget_location.Y)
+        Using img As Image = Image.FromFile("logo.jpg")
+            Channel_logo.Image = New Bitmap(img)
+        End Using
+        channel_name.Text = Registry.GetValue(reg_path, "Channel Name", "Varun Teja")
         statistics_updater.Start()
+
     End Sub
 
     Private Sub widget_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
@@ -52,7 +57,6 @@ Public Class widget
     Public Sub update_now()
         Try
             get_stat()
-            get_snip()
         Catch ex As Exception
             sub_count.Text = Registry.GetValue(reg_path, "Subscribers", "0")
             view_count.Text = Registry.GetValue(reg_path, "Views", "0")
@@ -80,6 +84,7 @@ Public Class widget
         Using img As Image = Image.FromFile("logo.jpg")
             Channel_logo.Image = New Bitmap(img)
         End Using
+        Registry.SetValue(reg_path, "Channel Name", channel_name.Text)
     End Sub
 
     Public Sub get_stat()
