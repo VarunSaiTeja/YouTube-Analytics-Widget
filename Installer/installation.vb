@@ -49,7 +49,7 @@ Public Class installation
             Registry.SetValue(reg_path, "Publisher", "Varun")
             Registry.SetValue(reg_path, "DisplayName", "YouTube Analytics Widget")
             Registry.SetValue(reg_path, "DisplayVersion", "1.0")
-            Registry.SetValue(reg_path, "DisplayIcon", install_path + "icon.ico")
+            Registry.SetValue(reg_path, "DisplayIcon", install_path + "\icon.ico")
             Registry.SetValue(reg_path, "UninstallString", install_path + "Uninstaller.exe")
             Registry.SetValue(reg_path, "URLInfoAbout", "https://YouTube.com/VarunTeja")
 
