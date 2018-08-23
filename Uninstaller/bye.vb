@@ -18,7 +18,7 @@ Public Class bye
 
     Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
         If button.Text = "Finish" Then
-            Process.Start("https://tiny.cc/whyytun")
+            Process.Start("https://tiny.cc/ytwidun")
             Process.GetCurrentProcess.Kill()
         End If
 

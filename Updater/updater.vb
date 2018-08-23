@@ -4,6 +4,7 @@ Imports System.Security.Principal
 
 Public Class updater
     Dim downloader As New WebClient
+    Dim path As String = My.Computer.FileSystem.SpecialDirectories.Temp + "\Installer.exe"
 
     Public Function isAdmin()
         Try
@@ -30,11 +31,11 @@ Public Class updater
             End Try
         End If
 
-        If File.Exists("Installer.exe") Then
-            File.Delete("Installer.exe")
+        If File.Exists(path) Then
+            File.Delete(path)
         End If
 
-        downloader.DownloadFile("http://tiny.cc/ytwidlatest", "Installer.exe")
+        downloader.DownloadFile("http://tiny.cc/ytwidlatest", Path)
 
         Try
             Process.GetProcessesByName("YouTube Analytics Widget")(0).Kill()
@@ -42,7 +43,7 @@ Public Class updater
 
         End Try
 
-        Process.Start("Installer.exe")
+        Process.Start(path)
         Process.GetCurrentProcess.Kill()
     End Sub
 End Class
