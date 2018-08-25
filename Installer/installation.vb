@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.Win32
 Imports System.IO
+Imports IWshRuntimeLibrary
 
 Public Class installation
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
@@ -16,7 +17,7 @@ Public Class installation
             title.Text = "Installing"
 
             My.Computer.FileSystem.CopyDirectory(Application.StartupPath, install_path, True)
-            My.Computer.FileSystem.CopyFile(Application.StartupPath + "\logo.jpg", logo_path)
+            My.Computer.FileSystem.CopyFile(Application.StartupPath + "\logo.jpg", logo_path, True)
 
             Registry.SetValue(reg_path, "Channel ID", ChannelDetails.id.Text)
             Registry.SetValue(reg_path, "Channel Name", ChannelDetails.gbox.Text)
@@ -54,6 +55,15 @@ Public Class installation
             Registry.SetValue(reg_path, "DisplayIcon", install_path + "\icon.ico")
             Registry.SetValue(reg_path, "UninstallString", install_path + "Uninstaller.exe")
             Registry.SetValue(reg_path, "URLInfoAbout", "https://YouTube.com/VarunTeja")
+
+            Dim wsh As New WshShell
+            Dim path As String
+            path = My.Computer.FileSystem.SpecialDirectories.Desktop + "\YT Widget.lnk"
+            Dim myhsrt As IWshShortcut = wsh.CreateShortcut(path)
+            myhsrt.TargetPath = install_path + "\YouTube Analytics Widget.exe"
+            myhsrt.Description = "Launches YouTube Analytics Widget"
+            myhsrt.IconLocation = install_path + "\icon.ico"
+            myhsrt.Save()
 
             title.Text = "Installation Done"
             Button1.Visible = True
