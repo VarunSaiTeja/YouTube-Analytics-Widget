@@ -38,6 +38,7 @@ Partial Class widget
         Me.videos = New System.Windows.Forms.Label()
         Me.views = New System.Windows.Forms.Label()
         Me.subscribers = New System.Windows.Forms.Label()
+        Me.check_update = New System.Windows.Forms.Timer(Me.components)
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.Channel_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -154,6 +155,10 @@ Partial Class widget
         Me.subscribers.TabIndex = 8
         Me.subscribers.Text = "Subscribers :"
         '
+        'check_update
+        '
+        Me.check_update.Interval = 10000
+        '
         'widget
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -194,4 +199,5 @@ Partial Class widget
     Friend WithEvents UpdateNowToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents check_update As Timer
 End Class

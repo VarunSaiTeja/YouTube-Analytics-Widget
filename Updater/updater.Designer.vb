@@ -22,8 +22,10 @@ Partial Class updater
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(updater))
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.update_now = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'Label1
@@ -35,6 +37,10 @@ Partial Class updater
         Me.Label1.Size = New System.Drawing.Size(111, 25)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Updating..."
+        '
+        'update_now
+        '
+        Me.update_now.Interval = 1000
         '
         'updater
         '
@@ -51,5 +57,5 @@ Partial Class updater
     End Sub
 
     Friend WithEvents Label1 As Label
-
+    Friend WithEvents update_now As Timer
 End Class

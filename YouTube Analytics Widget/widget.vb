@@ -23,6 +23,7 @@ Public Class widget
         End Using
         channel_name.Text = Registry.GetValue(reg_path, "Channel Name", "Varun Teja")
         statistics_updater.Start()
+        check_update.Start()
 
     End Sub
 
@@ -164,5 +165,28 @@ Public Class widget
         End If
         statistics_updater.Interval = 3600000
         time_taken = time_taken + 1
+    End Sub
+
+    Private Sub check_update_Tick(sender As Object, e As EventArgs) Handles check_update.Tick
+        check_update.Stop()
+        Dim current As String = Application.ProductVersion
+        Dim latest As String
+        link = "http://tiny.cc/ytwidver"
+        web_requester = WebRequest.Create(link)
+        web_responsed = web_requester.GetResponse
+        stream_reader = New StreamReader(web_responsed.GetResponseStream)
+        latest = stream_reader.ReadToEnd
+        If (latest.Contains(current)) Then
+            MsgBox("Up To Date")
+        Else
+            Select Case MsgBox("Do you want to update now", MsgBoxStyle.YesNo, "YT Widget Update Avilable")
+                Case MsgBoxResult.Yes
+                    Process.Start("Updater.exe")
+                    Process.GetCurrentProcess.Kill()
+                Case MsgBoxResult.No
+                    MsgBox("You can update later also from settings")
+            End Select
+
+        End If
     End Sub
 End Class
