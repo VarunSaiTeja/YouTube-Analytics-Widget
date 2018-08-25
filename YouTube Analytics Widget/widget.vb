@@ -12,12 +12,13 @@ Public Class widget
     Dim web_responsed As WebResponse
     Dim time_taken As Long = 0
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
+    Dim logo_path As String = My.Computer.FileSystem.SpecialDirectories.MyPictures + "\Channel Logo.jpg"
     ' format "number" to diplay number with commas
     ' format "bmk" to display number in m/k
 
     Private Sub widget_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Location = New System.Drawing.Point(My.Settings.widget_location.X, My.Settings.widget_location.Y)
-        Using img As Image = Image.FromFile("logo.jpg")
+        Using img As Image = Image.FromFile(logo_path)
             Channel_logo.Image = New Bitmap(img)
         End Using
         channel_name.Text = Registry.GetValue(reg_path, "Channel Name", "Varun Teja")
@@ -61,7 +62,7 @@ Public Class widget
             sub_count.Text = Registry.GetValue(reg_path, "Subscribers", "0")
             view_count.Text = Registry.GetValue(reg_path, "Views", "0")
             videos_count.Text = Registry.GetValue(reg_path, "Videos", "0")
-            Using img As Image = Image.FromFile("logo.jpg")
+            Using img As Image = Image.FromFile(logo_path)
                 Channel_logo.Image = New Bitmap(img)
             End Using
         End Try
@@ -77,11 +78,11 @@ Public Class widget
         Dim channel_title = SnipJson("items")(0)("snippet")("title")
         Dim logo_link = SnipJson("items")(0)("snippet")("thumbnails")("default")("url")
         channel_name.Text = channel_title
-        If File.Exists("logo.jpg") Then
-            File.Delete("logo.jpg")
+        If File.Exists(logo_path) Then
+            File.Delete(logo_path)
         End If
-        My.Computer.Network.DownloadFile(logo_link, "logo.jpg")
-        Using img As Image = Image.FromFile("logo.jpg")
+        My.Computer.Network.DownloadFile(logo_link, logo_path)
+        Using img As Image = Image.FromFile(logo_path)
             Channel_logo.Image = New Bitmap(img)
         End Using
         Registry.SetValue(reg_path, "Channel Name", channel_name.Text)

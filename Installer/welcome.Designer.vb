@@ -54,9 +54,9 @@ Partial Class welcome
         Me.title.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.title.Location = New System.Drawing.Point(84, 9)
         Me.title.Name = "title"
-        Me.title.Size = New System.Drawing.Size(256, 25)
+        Me.title.Size = New System.Drawing.Size(244, 25)
         Me.title.TabIndex = 2
-        Me.title.Text = "YouTube Annalytics Widget"
+        Me.title.Text = "YouTube Analytics Widget"
         '
         'welcome
         '
