@@ -4,6 +4,7 @@ Imports System.IO
 Public Class installation
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
     Dim install_path As String = My.Computer.FileSystem.SpecialDirectories.ProgramFiles + "\Varun\YouTube Analytics Widget"
+    Dim logo_path As String = My.Computer.FileSystem.SpecialDirectories.MyPictures + "\Channel Logo.jpg"
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Button1.Text = "Finish" Then
             Process.Start(install_path + "\YouTube Analytics Widget.exe")
@@ -15,6 +16,7 @@ Public Class installation
             title.Text = "Installing"
 
             My.Computer.FileSystem.CopyDirectory(Application.StartupPath, install_path, True)
+            My.Computer.FileSystem.CopyFile(Application.StartupPath + "\logo.jpg", logo_path)
 
             Registry.SetValue(reg_path, "Channel ID", ChannelDetails.id.Text)
             Registry.SetValue(reg_path, "Channel Name", ChannelDetails.gbox.Text)
