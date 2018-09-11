@@ -1,7 +1,7 @@
 ﻿Imports System.Security.Principal
 
 Public Class welcome
-    Public Function isAdmin()
+    Public Function IsAdmin()
         Try
             Dim user As WindowsIdentity = WindowsIdentity.GetCurrent
             Dim principal As WindowsPrincipal = New WindowsPrincipal(user)
@@ -17,7 +17,7 @@ Public Class welcome
     End Sub
 
     Private Sub welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If (isAdmin()) Then
+        If (IsAdmin()) Then
 
         Else
             Try

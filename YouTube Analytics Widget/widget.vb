@@ -167,9 +167,8 @@ Public Class widget
         time_taken = time_taken + 1
     End Sub
 
-    Private Sub Check_update_Tick(sender As Object, e As EventArgs) Handles check_update.Tick
+    Public Sub Check_app_update()
         Try
-            check_update.Stop()
             Dim current As String = Application.ProductVersion
             Dim latest As String
             link = "http://tiny.cc/ytwidver"
@@ -187,9 +186,13 @@ Public Class widget
                     Case MsgBoxResult.No
                         MsgBox("You can update later also from settings")
                 End Select
-
             End If
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub Check_update_Tick(sender As Object, e As EventArgs) Handles check_update.Tick
+        check_update.Stop()
+        Check_app_update()
     End Sub
 End Class

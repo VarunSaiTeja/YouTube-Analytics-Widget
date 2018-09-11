@@ -4,17 +4,17 @@ Public Class settings
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
     Dim install_path As String = My.Computer.FileSystem.SpecialDirectories.ProgramFiles + "\Varun\YouTube Analytics Widget"
 
-    Private Sub update_id_Click(sender As Object, e As EventArgs) Handles update_id.Click
+    Private Sub Update_id_Click(sender As Object, e As EventArgs) Handles update_id.Click
         Registry.SetValue(reg_path, "Channel ID", id_textbox.Text)
         Try
-            widget.get_snip()
-            widget.get_stat()
+            widget.Get_snip()
+            widget.Get_stat()
         Catch ex As Exception
             MsgBox("Check Your Internet Connection")
         End Try
     End Sub
 
-    Private Sub settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         id_textbox.Text = Registry.GetValue(reg_path, "Channel ID", "UCyq7mspndOnlqR41axhhT8A")
         Duration.Text = Registry.GetValue(reg_path, "Interval", "1 Hour")
         If Registry.GetValue(reg_path, "Format", "number") = "number" Then
@@ -38,7 +38,7 @@ Public Class settings
         End If
     End Sub
 
-    Private Sub formatting_SelectedIndexChanged(sender As Object, e As EventArgs) Handles formatting.SelectedIndexChanged
+    Private Sub Formatting_SelectedIndexChanged(sender As Object, e As EventArgs) Handles formatting.SelectedIndexChanged
         If formatting.Text = "Numbers with comma" Then
             Registry.SetValue(reg_path, "Format", "number")
         ElseIf formatting.Text = "Shortcuts B/M/K" Then
@@ -46,7 +46,7 @@ Public Class settings
         End If
     End Sub
 
-    Private Sub startup_CheckedChanged(sender As Object, e As EventArgs) Handles startup.CheckedChanged
+    Private Sub Startup_CheckedChanged(sender As Object, e As EventArgs) Handles startup.CheckedChanged
         If startup.Checked = True Then
             Registry.SetValue("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "YouTube Analytics Widget", install_path + "\YouTube Analytics Widget.exe")
         Else

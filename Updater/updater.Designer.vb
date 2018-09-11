@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class updater
+Partial Class Updater
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.

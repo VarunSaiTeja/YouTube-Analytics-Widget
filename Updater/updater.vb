@@ -1,15 +1,15 @@
 ﻿Imports System.IO
 Imports System.Net
 
-Public Class updater
+Public Class Updater
     Dim downloader As New WebClient
     Dim path As String = My.Computer.FileSystem.SpecialDirectories.Temp + "\Installer.exe"
 
-    Private Sub updater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Updater_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         update_now.Start()
     End Sub
 
-    Private Sub update_now_Tick(sender As Object, e As EventArgs) Handles update_now.Tick
+    Private Sub Update_now_Tick(sender As Object, e As EventArgs) Handles update_now.Tick
         update_now.Stop()
 
         If File.Exists(path) Then

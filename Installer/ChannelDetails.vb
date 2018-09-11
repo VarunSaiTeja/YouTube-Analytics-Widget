@@ -13,7 +13,7 @@ Public Class ChannelDetails
     Dim user_id As String = "UCyq7mspndOnlqR41axhhT8A"
     Dim id_correct As Int16 = 0
 
-    Private Sub id_set_Click(sender As Object, e As EventArgs) Handles id_set.Click
+    Private Sub Id_set_Click(sender As Object, e As EventArgs) Handles id_set.Click
         user_id = id.Text
         get_update()
         If id_correct = 1 Then
@@ -29,7 +29,7 @@ Public Class ChannelDetails
 
     End Sub
 
-    Public Sub get_update()
+    Public Sub Get_update()
         Try
             get_snip()
             get_stat()
@@ -41,7 +41,7 @@ Public Class ChannelDetails
         End Try
     End Sub
 
-    Public Sub get_snip()
+    Public Sub Get_snip()
         link = "https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + user_id + "&key=AIzaSyDDom7eBozF_WF0N1XyNTZtDGXBb6Tffs8"
         web_requester = WebRequest.Create(link)
         web_responsed = web_requester.GetResponse
@@ -60,7 +60,7 @@ Public Class ChannelDetails
         End Using
     End Sub
 
-    Public Sub get_stat()
+    Public Sub Get_stat()
         link = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + user_id + "&key=AIzaSyDDom7eBozF_WF0N1XyNTZtDGXBb6Tffs8"
         web_requester = WebRequest.Create(link)
         web_responsed = web_requester.GetResponse
@@ -104,10 +104,6 @@ Public Class ChannelDetails
             count = video
         End If
         videos_count.Text = count
-    End Sub
-
-    Public Sub id_check()
-        id_correct = 1
     End Sub
 
     Private Sub ChannelDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load

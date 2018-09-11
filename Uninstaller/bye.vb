@@ -6,7 +6,7 @@ Public Class bye
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
     Dim install_path As String = My.Computer.FileSystem.SpecialDirectories.ProgramFiles + "\Varun\YouTube Analytics Widget"
 
-    Public Function isAdmin()
+    Public Function IsAdmin()
         Try
             Dim user As WindowsIdentity = WindowsIdentity.GetCurrent
             Dim principal As WindowsPrincipal = New WindowsPrincipal(user)
@@ -16,7 +16,7 @@ Public Class bye
         End Try
     End Function
 
-    Private Sub button_Click(sender As Object, e As EventArgs) Handles button.Click
+    Private Sub Button_Click(sender As Object, e As EventArgs) Handles button.Click
         If button.Text = "Finish" Then
             Process.Start("https://tiny.cc/ytwidun")
             Process.GetCurrentProcess.Kill()
@@ -53,8 +53,8 @@ Public Class bye
         End If
     End Sub
 
-    Private Sub bye_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If (isAdmin()) Then
+    Private Sub Bye_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If (IsAdmin()) Then
 
         Else
             Try
