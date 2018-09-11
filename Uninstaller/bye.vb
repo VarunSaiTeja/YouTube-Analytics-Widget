@@ -3,6 +3,7 @@ Imports Microsoft.Win32
 Imports System.Security.Principal
 
 Public Class bye
+    Dim p As New Process
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
     Dim install_path As String = My.Computer.FileSystem.SpecialDirectories.ProgramFiles + "\Varun\YouTube Analytics Widget"
 
@@ -54,20 +55,24 @@ Public Class bye
     End Sub
 
     Private Sub Bye_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+New_process:
         If (IsAdmin()) Then
 
         Else
             Try
-                Dim p As New Process
                 p.StartInfo.FileName = Application.ExecutablePath
                 p.StartInfo.Verb = "runas"
                 p.Start()
                 Process.GetCurrentProcess.Kill()
             Catch ex As Exception
-                MsgBox("Need Admin Access")
-                Process.GetCurrentProcess.Kill()
+                Dim oops As String
+                oops = MsgBox("Need Admin Access", vbCritical + vbRetryCancel)
+                If oops = vbRetry Then
+                    GoTo New_process
+                Else
+                    Process.GetCurrentProcess.Kill()
+                End If
             End Try
-
         End If
     End Sub
 End Class

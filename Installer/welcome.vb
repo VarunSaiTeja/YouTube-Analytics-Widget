@@ -1,6 +1,7 @@
 ﻿Imports System.Security.Principal
 
 Public Class welcome
+    Dim p As New Process
     Public Function IsAdmin()
         Try
             Dim user As WindowsIdentity = WindowsIdentity.GetCurrent
@@ -16,21 +17,25 @@ Public Class welcome
         ChannelDetails.Show()
     End Sub
 
-    Private Sub welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+New_process:
         If (IsAdmin()) Then
 
         Else
             Try
-                Dim p As New Process
                 p.StartInfo.FileName = Application.ExecutablePath
                 p.StartInfo.Verb = "runas"
                 p.Start()
                 Process.GetCurrentProcess.Kill()
             Catch ex As Exception
-                MsgBox("Need Admin Access")
-                Process.GetCurrentProcess.Kill()
+                Dim oops As String
+                oops = MsgBox("Need Admin Access", vbCritical + vbRetryCancel)
+                If oops = vbRetry Then
+                    GoTo New_process
+                Else
+                    Process.GetCurrentProcess.Kill()
+                End If
             End Try
-
         End If
     End Sub
 End Class
