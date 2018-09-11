@@ -43,6 +43,18 @@ Public Class installation
                 Registry.SetValue(reg_path, "Interval", "1 Day")
             End If
 
+            If settings.logo_task.Text = "Update Analytics" Then
+                Registry.SetValue(reg_path, "Logo Task", "Update Analytics")
+            ElseIf settings.logo_task.Text = "Open Analytics" Then
+                Registry.SetValue(reg_path, "Logo Task", "Open Analytics")
+            ElseIf settings.logo_task.Text = "Open Creator Studio" Then
+                Registry.SetValue(reg_path, "Logo Task", "Open Creator Studio")
+            ElseIf settings.logo_task.Text = "Open Channel" Then
+                Registry.SetValue(reg_path, "Logo Task", "Open Channel")
+            ElseIf settings.logo_task.Text = "Nothing" Then
+                Registry.SetValue(reg_path, "Logo Task", "Nothing")
+            End If
+
             If settings.startup.Checked = True Then
                 reg_path = "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
                 Registry.SetValue(reg_path, "YouTube Analytics Widget", install_path + "\YouTube Analytics Widget.exe")

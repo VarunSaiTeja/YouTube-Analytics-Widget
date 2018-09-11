@@ -26,7 +26,9 @@ Partial Class settings
         Me.nextform = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.logo_task = New System.Windows.Forms.ComboBox()
         Me.startup = New System.Windows.Forms.CheckBox()
+        Me.task_on_logo = New System.Windows.Forms.Label()
         Me.formatting = New System.Windows.Forms.ComboBox()
         Me.count_view = New System.Windows.Forms.Label()
         Me.Duration = New System.Windows.Forms.ComboBox()
@@ -36,7 +38,7 @@ Partial Class settings
         '
         'nextform
         '
-        Me.nextform.Location = New System.Drawing.Point(167, 195)
+        Me.nextform.Location = New System.Drawing.Point(167, 204)
         Me.nextform.Name = "nextform"
         Me.nextform.Size = New System.Drawing.Size(75, 23)
         Me.nextform.TabIndex = 11
@@ -55,16 +57,28 @@ Partial Class settings
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.logo_task)
         Me.GroupBox1.Controls.Add(Me.startup)
+        Me.GroupBox1.Controls.Add(Me.task_on_logo)
         Me.GroupBox1.Controls.Add(Me.formatting)
         Me.GroupBox1.Controls.Add(Me.count_view)
         Me.GroupBox1.Controls.Add(Me.Duration)
         Me.GroupBox1.Controls.Add(Me.update_interval)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 32)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(376, 139)
+        Me.GroupBox1.Size = New System.Drawing.Size(376, 166)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
+        '
+        'logo_task
+        '
+        Me.logo_task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.logo_task.FormattingEnabled = True
+        Me.logo_task.Items.AddRange(New Object() {"Nothing", "Update Analytics", "Open Analytics", "Open Creator Studio", "Open Channel"})
+        Me.logo_task.Location = New System.Drawing.Point(182, 124)
+        Me.logo_task.Name = "logo_task"
+        Me.logo_task.Size = New System.Drawing.Size(137, 21)
+        Me.logo_task.TabIndex = 22
         '
         'startup
         '
@@ -78,6 +92,16 @@ Partial Class settings
         Me.startup.TabIndex = 16
         Me.startup.Text = "Auto Start On Boot"
         Me.startup.UseVisualStyleBackColor = True
+        '
+        'task_on_logo
+        '
+        Me.task_on_logo.AutoSize = True
+        Me.task_on_logo.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.task_on_logo.Location = New System.Drawing.Point(57, 124)
+        Me.task_on_logo.Name = "task_on_logo"
+        Me.task_on_logo.Size = New System.Drawing.Size(105, 19)
+        Me.task_on_logo.TabIndex = 21
+        Me.task_on_logo.Text = "Click on logo to"
         '
         'formatting
         '
@@ -145,4 +169,6 @@ Partial Class settings
     Friend WithEvents Duration As ComboBox
     Friend WithEvents update_interval As Label
     Friend WithEvents startup As CheckBox
+    Friend WithEvents logo_task As ComboBox
+    Friend WithEvents task_on_logo As Label
 End Class
