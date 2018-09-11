@@ -70,4 +70,29 @@ Public Class settings
             Registry.SetValue(reg_path, "Logo Task", "Nothing")
         End If
     End Sub
+
+    Private Sub WhatsappToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles WhatsappToolStripMenuItem.Click
+        Process.Start("https://api.whatsapp.com/send?phone=919010075670")
+    End Sub
+
+    Private Sub TelegramToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TelegramToolStripMenuItem.Click
+        Process.Start("https://t.me/VarunSaiTeja")
+    End Sub
+
+    Private Sub YouTubeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles YouTubeToolStripMenuItem.Click
+        Process.Start("https://www.youtube.com/VarunTeja")
+    End Sub
+
+    Private Sub PaytmToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PaytmToolStripMenuItem.Click
+        Process.Start("http://tiny.cc/varunpaytm")
+    End Sub
+
+    Private Sub UPIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UPIToolStripMenuItem.Click
+        Process.Start("http://tiny.cc/varunupi")
+    End Sub
+
+    Private Sub PayPalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PayPalToolStripMenuItem.Click
+        Process.Start("https://www.paypal.me/varunsaiteja")
+    End Sub
+
 End Class

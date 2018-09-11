@@ -176,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="Resources\youtube.png" />
+    <None Include="Resources\whatsapp.png" />
+    <None Include="Resources\upi.png" />
+    <None Include="Resources\telegram.png" />
+    <None Include="Resources\paytm.png" />
+    <None Include="Resources\paypal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

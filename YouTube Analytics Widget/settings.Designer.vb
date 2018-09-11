@@ -34,11 +34,21 @@ Partial Class settings
         Me.title = New System.Windows.Forms.Label()
         Me.task_on_logo = New System.Windows.Forms.Label()
         Me.logo_task = New System.Windows.Forms.ComboBox()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ContactToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.WhatsappToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TelegramToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.YouTubeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DonateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PaytmToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UPIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PayPalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'id_textbox
         '
-        Me.id_textbox.Location = New System.Drawing.Point(141, 48)
+        Me.id_textbox.Location = New System.Drawing.Point(147, 74)
         Me.id_textbox.Name = "id_textbox"
         Me.id_textbox.Size = New System.Drawing.Size(184, 20)
         Me.id_textbox.TabIndex = 0
@@ -47,7 +57,7 @@ Partial Class settings
         '
         Me.channel_id.AutoSize = True
         Me.channel_id.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.channel_id.Location = New System.Drawing.Point(29, 53)
+        Me.channel_id.Location = New System.Drawing.Point(35, 79)
         Me.channel_id.Name = "channel_id"
         Me.channel_id.Size = New System.Drawing.Size(65, 15)
         Me.channel_id.TabIndex = 1
@@ -55,7 +65,7 @@ Partial Class settings
         '
         'update_id
         '
-        Me.update_id.Location = New System.Drawing.Point(149, 247)
+        Me.update_id.Location = New System.Drawing.Point(155, 273)
         Me.update_id.Name = "update_id"
         Me.update_id.Size = New System.Drawing.Size(87, 23)
         Me.update_id.TabIndex = 2
@@ -66,7 +76,7 @@ Partial Class settings
         '
         Me.update_interval.AutoSize = True
         Me.update_interval.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.update_interval.Location = New System.Drawing.Point(29, 131)
+        Me.update_interval.Location = New System.Drawing.Point(35, 157)
         Me.update_interval.Name = "update_interval"
         Me.update_interval.Size = New System.Drawing.Size(87, 15)
         Me.update_interval.TabIndex = 3
@@ -77,7 +87,7 @@ Partial Class settings
         Me.Duration.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Duration.FormattingEnabled = True
         Me.Duration.Items.AddRange(New Object() {"1 Hour", "3 Hours", "6 Hours", "12 Hours", "1 Day"})
-        Me.Duration.Location = New System.Drawing.Point(141, 129)
+        Me.Duration.Location = New System.Drawing.Point(147, 155)
         Me.Duration.Name = "Duration"
         Me.Duration.Size = New System.Drawing.Size(87, 21)
         Me.Duration.TabIndex = 4
@@ -86,7 +96,7 @@ Partial Class settings
         '
         Me.count_view.AutoSize = True
         Me.count_view.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.count_view.Location = New System.Drawing.Point(29, 90)
+        Me.count_view.Location = New System.Drawing.Point(35, 116)
         Me.count_view.Name = "count_view"
         Me.count_view.Size = New System.Drawing.Size(68, 15)
         Me.count_view.TabIndex = 5
@@ -97,7 +107,7 @@ Partial Class settings
         Me.formatting.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.formatting.FormattingEnabled = True
         Me.formatting.Items.AddRange(New Object() {"Numbers with comma", "Shortcuts B/M/K"})
-        Me.formatting.Location = New System.Drawing.Point(141, 90)
+        Me.formatting.Location = New System.Drawing.Point(147, 116)
         Me.formatting.Name = "formatting"
         Me.formatting.Size = New System.Drawing.Size(137, 21)
         Me.formatting.TabIndex = 6
@@ -108,7 +118,7 @@ Partial Class settings
         Me.startup.Checked = True
         Me.startup.CheckState = System.Windows.Forms.CheckState.Checked
         Me.startup.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.startup.Location = New System.Drawing.Point(141, 210)
+        Me.startup.Location = New System.Drawing.Point(147, 236)
         Me.startup.Name = "startup"
         Me.startup.Size = New System.Drawing.Size(137, 21)
         Me.startup.TabIndex = 17
@@ -119,7 +129,7 @@ Partial Class settings
         '
         Me.title.AutoSize = True
         Me.title.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.title.Location = New System.Drawing.Point(144, 9)
+        Me.title.Location = New System.Drawing.Point(150, 35)
         Me.title.Name = "title"
         Me.title.Size = New System.Drawing.Size(84, 25)
         Me.title.TabIndex = 18
@@ -129,7 +139,7 @@ Partial Class settings
         '
         Me.task_on_logo.AutoSize = True
         Me.task_on_logo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.task_on_logo.Location = New System.Drawing.Point(29, 173)
+        Me.task_on_logo.Location = New System.Drawing.Point(35, 199)
         Me.task_on_logo.Name = "task_on_logo"
         Me.task_on_logo.Size = New System.Drawing.Size(91, 15)
         Me.task_on_logo.TabIndex = 19
@@ -140,16 +150,83 @@ Partial Class settings
         Me.logo_task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.logo_task.FormattingEnabled = True
         Me.logo_task.Items.AddRange(New Object() {"Nothing", "Update Analytics", "Open Analytics", "Open Creator Studio", "Open Channel"})
-        Me.logo_task.Location = New System.Drawing.Point(141, 167)
+        Me.logo_task.Location = New System.Drawing.Point(147, 193)
         Me.logo_task.Name = "logo_task"
         Me.logo_task.Size = New System.Drawing.Size(137, 21)
         Me.logo_task.TabIndex = 20
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ContactToolStripMenuItem, Me.DonateToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System
+        Me.MenuStrip1.Size = New System.Drawing.Size(377, 24)
+        Me.MenuStrip1.TabIndex = 21
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ContactToolStripMenuItem
+        '
+        Me.ContactToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WhatsappToolStripMenuItem, Me.TelegramToolStripMenuItem, Me.YouTubeToolStripMenuItem})
+        Me.ContactToolStripMenuItem.Name = "ContactToolStripMenuItem"
+        Me.ContactToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.ContactToolStripMenuItem.Text = "Contact"
+        '
+        'WhatsappToolStripMenuItem
+        '
+        Me.WhatsappToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.whatsapp
+        Me.WhatsappToolStripMenuItem.Name = "WhatsappToolStripMenuItem"
+        Me.WhatsappToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WhatsappToolStripMenuItem.Text = "Whatsapp"
+        '
+        'TelegramToolStripMenuItem
+        '
+        Me.TelegramToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.telegram
+        Me.TelegramToolStripMenuItem.Name = "TelegramToolStripMenuItem"
+        Me.TelegramToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TelegramToolStripMenuItem.Text = "Telegram"
+        '
+        'YouTubeToolStripMenuItem
+        '
+        Me.YouTubeToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.youtube
+        Me.YouTubeToolStripMenuItem.Name = "YouTubeToolStripMenuItem"
+        Me.YouTubeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.YouTubeToolStripMenuItem.Text = "YouTube"
+        '
+        'DonateToolStripMenuItem
+        '
+        Me.DonateToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PaytmToolStripMenuItem, Me.UPIToolStripMenuItem, Me.PayPalToolStripMenuItem})
+        Me.DonateToolStripMenuItem.Name = "DonateToolStripMenuItem"
+        Me.DonateToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.DonateToolStripMenuItem.Text = "Donate"
+        '
+        'PaytmToolStripMenuItem
+        '
+        Me.PaytmToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.paytm
+        Me.PaytmToolStripMenuItem.Name = "PaytmToolStripMenuItem"
+        Me.PaytmToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PaytmToolStripMenuItem.Text = "Paytm"
+        '
+        'UPIToolStripMenuItem
+        '
+        Me.UPIToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.upi
+        Me.UPIToolStripMenuItem.Name = "UPIToolStripMenuItem"
+        Me.UPIToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UPIToolStripMenuItem.Text = "UPI"
+        '
+        'PayPalToolStripMenuItem
+        '
+        Me.PayPalToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.paypal
+        Me.PayPalToolStripMenuItem.Name = "PayPalToolStripMenuItem"
+        Me.PayPalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PayPalToolStripMenuItem.Text = "PayPal"
         '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(377, 284)
+        Me.ClientSize = New System.Drawing.Size(377, 316)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.logo_task)
         Me.Controls.Add(Me.task_on_logo)
         Me.Controls.Add(Me.title)
@@ -165,6 +242,8 @@ Partial Class settings
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "settings"
         Me.Text = "YouTube Analytics Widget"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -181,4 +260,13 @@ Partial Class settings
     Friend WithEvents title As Label
     Friend WithEvents task_on_logo As Label
     Friend WithEvents logo_task As ComboBox
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ContactToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents WhatsappToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TelegramToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents YouTubeToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DonateToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PaytmToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UPIToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PayPalToolStripMenuItem As ToolStripMenuItem
 End Class
