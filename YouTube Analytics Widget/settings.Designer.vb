@@ -32,6 +32,8 @@ Partial Class settings
         Me.formatting = New System.Windows.Forms.ComboBox()
         Me.startup = New System.Windows.Forms.CheckBox()
         Me.title = New System.Windows.Forms.Label()
+        Me.task_on_logo = New System.Windows.Forms.Label()
+        Me.logo_task = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'id_textbox
@@ -53,7 +55,7 @@ Partial Class settings
         '
         'update_id
         '
-        Me.update_id.Location = New System.Drawing.Point(149, 206)
+        Me.update_id.Location = New System.Drawing.Point(149, 247)
         Me.update_id.Name = "update_id"
         Me.update_id.Size = New System.Drawing.Size(87, 23)
         Me.update_id.TabIndex = 2
@@ -106,7 +108,7 @@ Partial Class settings
         Me.startup.Checked = True
         Me.startup.CheckState = System.Windows.Forms.CheckState.Checked
         Me.startup.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.startup.Location = New System.Drawing.Point(141, 169)
+        Me.startup.Location = New System.Drawing.Point(141, 210)
         Me.startup.Name = "startup"
         Me.startup.Size = New System.Drawing.Size(137, 21)
         Me.startup.TabIndex = 17
@@ -123,11 +125,33 @@ Partial Class settings
         Me.title.TabIndex = 18
         Me.title.Text = "Settings"
         '
+        'task_on_logo
+        '
+        Me.task_on_logo.AutoSize = True
+        Me.task_on_logo.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.task_on_logo.Location = New System.Drawing.Point(29, 173)
+        Me.task_on_logo.Name = "task_on_logo"
+        Me.task_on_logo.Size = New System.Drawing.Size(91, 15)
+        Me.task_on_logo.TabIndex = 19
+        Me.task_on_logo.Text = "Click on logo to"
+        '
+        'logo_task
+        '
+        Me.logo_task.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.logo_task.FormattingEnabled = True
+        Me.logo_task.Items.AddRange(New Object() {"Nothing", "Update Analytics", "Open Analytics", "Open Creator Studio", "Open Channel"})
+        Me.logo_task.Location = New System.Drawing.Point(141, 167)
+        Me.logo_task.Name = "logo_task"
+        Me.logo_task.Size = New System.Drawing.Size(137, 21)
+        Me.logo_task.TabIndex = 20
+        '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(377, 243)
+        Me.ClientSize = New System.Drawing.Size(377, 284)
+        Me.Controls.Add(Me.logo_task)
+        Me.Controls.Add(Me.task_on_logo)
         Me.Controls.Add(Me.title)
         Me.Controls.Add(Me.startup)
         Me.Controls.Add(Me.formatting)
@@ -155,4 +179,6 @@ Partial Class settings
     Friend WithEvents formatting As ComboBox
     Friend WithEvents startup As CheckBox
     Friend WithEvents title As Label
+    Friend WithEvents task_on_logo As Label
+    Friend WithEvents logo_task As ComboBox
 End Class

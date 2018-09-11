@@ -22,6 +22,7 @@ Public Class settings
         ElseIf Registry.GetValue(reg_path, "Format", "bmk") = "bmk" Then
             formatting.Text = "Shortcuts B/M/K"
         End If
+        logo_task.Text = Registry.GetValue(reg_path, "Logo Task", "Update Analytics")
     End Sub
 
     Private Sub Duration_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Duration.SelectedIndexChanged
@@ -56,4 +57,17 @@ Public Class settings
         End If
     End Sub
 
+    Private Sub Logo_task_SelectedIndexChanged(sender As Object, e As EventArgs) Handles logo_task.SelectedIndexChanged
+        If logo_task.Text = "Update Analytics" Then
+            Registry.SetValue(reg_path, "Logo Task", "Update Analytics")
+        ElseIf logo_task.Text = "Open Analytics" Then
+            Registry.SetValue(reg_path, "Logo Task", "Open Analytics")
+        ElseIf logo_task.Text = "Open Creator Studio" Then
+            Registry.SetValue(reg_path, "Logo Task", "Open Creator Studio")
+        ElseIf logo_task.Text = "Open Channel" Then
+            Registry.SetValue(reg_path, "Logo Task", "Open Channel")
+        ElseIf logo_task.Text = "Nothing" Then
+            Registry.SetValue(reg_path, "Logo Task", "Nothing")
+        End If
+    End Sub
 End Class

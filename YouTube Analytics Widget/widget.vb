@@ -13,6 +13,7 @@ Public Class widget
     Dim time_taken As Long = 0
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
     Dim logo_path As String = My.Computer.FileSystem.SpecialDirectories.MyPictures + "\Channel Logo.jpg"
+    Dim logo_task As String
     ' format "number" to diplay number with commas
     ' format "bmk" to display number in m/k
 
@@ -194,5 +195,19 @@ Public Class widget
     Private Sub Check_update_Tick(sender As Object, e As EventArgs) Handles check_update.Tick
         check_update.Stop()
         Check_app_update()
+    End Sub
+
+    Private Sub Channel_logo_Click(sender As Object, e As EventArgs) Handles Channel_logo.Click
+        If Registry.GetValue(reg_path, "Logo Task", Nothing) = "Nothing" Then
+
+        ElseIf Registry.GetValue(reg_path, "Logo Task", Nothing) = "Update Analytics" Then
+            Update_now()
+        ElseIf Registry.GetValue(reg_path, "Logo Task", Nothing) = "Open Analytics" Then
+            Process.Start("https://www.youtube.com/analytics?o=U")
+        ElseIf Registry.GetValue(reg_path, "Logo Task", Nothing) = "Open Creator Studio" Then
+            Process.Start("https://www.youtube.com/dashboard?o=U")
+        ElseIf Registry.GetValue(reg_path, "Logo Task", Nothing) = "Open Channel" Then
+            Process.Start("https://www.youtube.com/channel/" + Registry.GetValue(reg_path, "Channel ID", "UCyq7mspndOnlqR41axhhT8A"))
+        End If
     End Sub
 End Class
