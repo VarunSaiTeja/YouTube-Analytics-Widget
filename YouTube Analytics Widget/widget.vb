@@ -16,7 +16,7 @@ Public Class widget
     ' format "number" to diplay number with commas
     ' format "bmk" to display number in m/k
 
-    Private Sub widget_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Widget_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Location = New System.Drawing.Point(My.Settings.widget_location.X, My.Settings.widget_location.Y)
         Using img As Image = Image.FromFile(logo_path)
             Channel_logo.Image = New Bitmap(img)
@@ -27,7 +27,7 @@ Public Class widget
 
     End Sub
 
-    Private Sub widget_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+    Private Sub Widget_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         My.Settings.widget_location = New System.Drawing.Point(Me.Location.X, Me.Location.Y)
         My.Settings.Save()
         Registry.SetValue(reg_path, "Subscribers", sub_count.Text)
@@ -56,9 +56,9 @@ Public Class widget
         Me.Close()
     End Sub
 
-    Public Sub update_now()
+    Public Sub Update_now()
         Try
-            get_stat()
+            Get_stat()
         Catch ex As Exception
             sub_count.Text = Registry.GetValue(reg_path, "Subscribers", "0")
             view_count.Text = Registry.GetValue(reg_path, "Views", "0")
@@ -69,7 +69,7 @@ Public Class widget
         End Try
     End Sub
 
-    Public Sub get_snip()
+    Public Sub Get_snip()
         link = "https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + Registry.GetValue(reg_path, "Channel ID", "UCyq7mspndOnlqR41axhhT8A") + "&key=AIzaSyDDom7eBozF_WF0N1XyNTZtDGXBb6Tffs8"
         web_requester = WebRequest.Create(link)
         web_responsed = web_requester.GetResponse
@@ -89,7 +89,7 @@ Public Class widget
         Registry.SetValue(reg_path, "Channel Name", channel_name.Text)
     End Sub
 
-    Public Sub get_stat()
+    Public Sub Get_stat()
         link = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + Registry.GetValue(reg_path, "Channel ID", "UCyq7mspndOnlqR41axhhT8A") + "&key=AIzaSyDDom7eBozF_WF0N1XyNTZtDGXBb6Tffs8"
         web_requester = WebRequest.Create(link)
         web_responsed = web_requester.GetResponse
@@ -144,7 +144,7 @@ Public Class widget
         End If
     End Sub
 
-    Private Sub statistics_updater_Tick(sender As Object, e As EventArgs) Handles statistics_updater.Tick
+    Private Sub Statistics_updater_Tick(sender As Object, e As EventArgs) Handles statistics_updater.Tick
         If time_taken = 0 Then
             update_now()
         ElseIf time_taken = 1 And Registry.GetValue(reg_path, "Interval", "0 Hour") = "1 Hour" Then
@@ -167,26 +167,29 @@ Public Class widget
         time_taken = time_taken + 1
     End Sub
 
-    Private Sub check_update_Tick(sender As Object, e As EventArgs) Handles check_update.Tick
-        check_update.Stop()
-        Dim current As String = Application.ProductVersion
-        Dim latest As String
-        link = "http://tiny.cc/ytwidver"
-        web_requester = WebRequest.Create(link)
-        web_responsed = web_requester.GetResponse
-        stream_reader = New StreamReader(web_responsed.GetResponseStream)
-        latest = stream_reader.ReadToEnd
-        If (latest.Contains(current)) Then
-            MsgBox("Up To Date")
-        Else
-            Select Case MsgBox("Do you want to update now", MsgBoxStyle.YesNo, "YT Widget Update Avilable")
-                Case MsgBoxResult.Yes
-                    Process.Start("Updater.exe")
-                    Process.GetCurrentProcess.Kill()
-                Case MsgBoxResult.No
-                    MsgBox("You can update later also from settings")
-            End Select
+    Private Sub Check_update_Tick(sender As Object, e As EventArgs) Handles check_update.Tick
+        Try
+            check_update.Stop()
+            Dim current As String = Application.ProductVersion
+            Dim latest As String
+            link = "http://tiny.cc/ytwidver"
+            web_requester = WebRequest.Create(link)
+            web_responsed = web_requester.GetResponse
+            stream_reader = New StreamReader(web_responsed.GetResponseStream)
+            latest = stream_reader.ReadToEnd
+            If (latest.Contains(current)) Then
+                MsgBox("Up To Date")
+            Else
+                Select Case MsgBox("Do you want to update now", MsgBoxStyle.YesNo, "YT Widget Update Avilable")
+                    Case MsgBoxResult.Yes
+                        Process.Start("Updater.exe")
+                        Process.GetCurrentProcess.Kill()
+                    Case MsgBoxResult.No
+                        MsgBox("You can update later also from settings")
+                End Select
 
-        End If
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

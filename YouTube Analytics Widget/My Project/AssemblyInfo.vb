@@ -9,7 +9,7 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("YouTube Analytics Widget")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyDescription("A widget shows youtuber's channel anayltics in desktop")>
 <Assembly: AssemblyCompany("Varun")>
 <Assembly: AssemblyProduct("YouTube Analytics Widget")>
 <Assembly: AssemblyCopyright("Copyright ©  2018")>
