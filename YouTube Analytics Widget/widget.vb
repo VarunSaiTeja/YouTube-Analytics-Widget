@@ -183,7 +183,7 @@ Public Class widget
             If (latest.Contains(current)) Then
                 MsgBox("Up To Date")
             Else
-                Select Case MsgBox("Do you want to update now", vbYesNo, "YT Widget Update Avilable")
+                Select Case MsgBox("Update Avilable for Widget" + vbNewLine + "Latest Version : " + latest + vbNewLine + "Current Version : " + current + vbNewLine + "Do you want to update now", vbCritical + vbYesNo)
                     Case vbYes
                         Process.Start("Updater.exe")
                         Process.GetCurrentProcess.Kill()
