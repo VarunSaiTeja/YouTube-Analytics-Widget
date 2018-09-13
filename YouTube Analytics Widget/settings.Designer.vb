@@ -176,21 +176,21 @@ Partial Class settings
         '
         Me.WhatsappToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.whatsapp
         Me.WhatsappToolStripMenuItem.Name = "WhatsappToolStripMenuItem"
-        Me.WhatsappToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WhatsappToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.WhatsappToolStripMenuItem.Text = "Whatsapp"
         '
         'TelegramToolStripMenuItem
         '
         Me.TelegramToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.telegram
         Me.TelegramToolStripMenuItem.Name = "TelegramToolStripMenuItem"
-        Me.TelegramToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TelegramToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.TelegramToolStripMenuItem.Text = "Telegram"
         '
         'YouTubeToolStripMenuItem
         '
         Me.YouTubeToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.youtube
         Me.YouTubeToolStripMenuItem.Name = "YouTubeToolStripMenuItem"
-        Me.YouTubeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.YouTubeToolStripMenuItem.Size = New System.Drawing.Size(127, 22)
         Me.YouTubeToolStripMenuItem.Text = "YouTube"
         '
         'DonateToolStripMenuItem
@@ -204,21 +204,21 @@ Partial Class settings
         '
         Me.PaytmToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.paytm
         Me.PaytmToolStripMenuItem.Name = "PaytmToolStripMenuItem"
-        Me.PaytmToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PaytmToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
         Me.PaytmToolStripMenuItem.Text = "Paytm"
         '
         'UPIToolStripMenuItem
         '
         Me.UPIToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.upi
         Me.UPIToolStripMenuItem.Name = "UPIToolStripMenuItem"
-        Me.UPIToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.UPIToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
         Me.UPIToolStripMenuItem.Text = "UPI"
         '
         'PayPalToolStripMenuItem
         '
         Me.PayPalToolStripMenuItem.Image = Global.YouTube_Analytics_Widget.My.Resources.Resources.paypal
         Me.PayPalToolStripMenuItem.Name = "PayPalToolStripMenuItem"
-        Me.PayPalToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PayPalToolStripMenuItem.Size = New System.Drawing.Size(109, 22)
         Me.PayPalToolStripMenuItem.Text = "PayPal"
         '
         'settings
@@ -241,6 +241,7 @@ Partial Class settings
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "settings"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "YouTube Analytics Widget"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

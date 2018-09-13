@@ -163,6 +163,7 @@ Partial Class widget
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(263, 131)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.videos_count)
