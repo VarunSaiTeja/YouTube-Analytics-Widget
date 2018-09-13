@@ -25,12 +25,14 @@ Public Class widget
         channel_name.Text = Registry.GetValue(reg_path, "Channel Name", "Varun Teja")
         statistics_updater.Start()
         check_update.Start()
-
     End Sub
 
     Private Sub Widget_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         My.Settings.widget_location = New System.Drawing.Point(Me.Location.X, Me.Location.Y)
         My.Settings.Save()
+    End Sub
+
+    Public Sub Update_registry()
         Registry.SetValue(reg_path, "Subscribers", sub_count.Text)
         Registry.SetValue(reg_path, "Views", view_count.Text)
         Registry.SetValue(reg_path, "Videos", videos_count.Text)
@@ -60,6 +62,7 @@ Public Class widget
     Public Sub Update_now()
         Try
             Get_stat()
+            Update_registry()
         Catch ex As Exception
             sub_count.Text = Registry.GetValue(reg_path, "Subscribers", "0")
             view_count.Text = Registry.GetValue(reg_path, "Views", "0")
