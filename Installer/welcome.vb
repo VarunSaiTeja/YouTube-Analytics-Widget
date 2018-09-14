@@ -19,9 +19,7 @@ Public Class welcome
 
     Private Sub Welcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 New_process:
-        If (IsAdmin()) Then
-
-        Else
+        If Not (IsAdmin()) Then
             Try
                 p.StartInfo.FileName = Application.ExecutablePath
                 p.StartInfo.Verb = "runas"

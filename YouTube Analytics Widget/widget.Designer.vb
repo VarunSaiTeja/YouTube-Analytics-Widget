@@ -98,60 +98,60 @@ Partial Class widget
         'videos_count
         '
         Me.videos_count.AutoSize = True
-        Me.videos_count.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.videos_count.Location = New System.Drawing.Point(173, 93)
+        Me.videos_count.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.videos_count.Location = New System.Drawing.Point(187, 93)
         Me.videos_count.Name = "videos_count"
-        Me.videos_count.Size = New System.Drawing.Size(13, 13)
+        Me.videos_count.Size = New System.Drawing.Size(15, 17)
         Me.videos_count.TabIndex = 13
         Me.videos_count.Text = "0"
         '
         'view_count
         '
         Me.view_count.AutoSize = True
-        Me.view_count.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.view_count.Location = New System.Drawing.Point(173, 67)
+        Me.view_count.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.view_count.Location = New System.Drawing.Point(187, 67)
         Me.view_count.Name = "view_count"
-        Me.view_count.Size = New System.Drawing.Size(13, 13)
+        Me.view_count.Size = New System.Drawing.Size(15, 17)
         Me.view_count.TabIndex = 12
         Me.view_count.Text = "0"
         '
         'sub_count
         '
         Me.sub_count.AutoSize = True
-        Me.sub_count.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sub_count.Location = New System.Drawing.Point(173, 40)
+        Me.sub_count.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sub_count.Location = New System.Drawing.Point(187, 40)
         Me.sub_count.Name = "sub_count"
-        Me.sub_count.Size = New System.Drawing.Size(13, 13)
+        Me.sub_count.Size = New System.Drawing.Size(15, 17)
         Me.sub_count.TabIndex = 11
         Me.sub_count.Text = "0"
         '
         'videos
         '
         Me.videos.AutoSize = True
-        Me.videos.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.videos.Location = New System.Drawing.Point(126, 93)
+        Me.videos.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.videos.Location = New System.Drawing.Point(132, 93)
         Me.videos.Name = "videos"
-        Me.videos.Size = New System.Drawing.Size(48, 13)
+        Me.videos.Size = New System.Drawing.Size(55, 17)
         Me.videos.TabIndex = 10
         Me.videos.Text = "Videos :"
         '
         'views
         '
         Me.views.AutoSize = True
-        Me.views.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.views.Location = New System.Drawing.Point(131, 67)
+        Me.views.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.views.Location = New System.Drawing.Point(138, 67)
         Me.views.Name = "views"
-        Me.views.Size = New System.Drawing.Size(43, 13)
+        Me.views.Size = New System.Drawing.Size(49, 17)
         Me.views.TabIndex = 9
         Me.views.Text = "Views :"
         '
         'subscribers
         '
         Me.subscribers.AutoSize = True
-        Me.subscribers.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.subscribers.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.subscribers.Location = New System.Drawing.Point(103, 40)
         Me.subscribers.Name = "subscribers"
-        Me.subscribers.Size = New System.Drawing.Size(72, 13)
+        Me.subscribers.Size = New System.Drawing.Size(84, 17)
         Me.subscribers.TabIndex = 8
         Me.subscribers.Text = "Subscribers :"
         '
@@ -164,7 +164,7 @@ Partial Class widget
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(263, 131)
+        Me.ClientSize = New System.Drawing.Size(250, 131)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.videos_count)
         Me.Controls.Add(Me.view_count)

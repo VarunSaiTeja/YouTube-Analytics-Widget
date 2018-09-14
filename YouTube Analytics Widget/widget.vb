@@ -19,6 +19,8 @@ Public Class widget
 
     Private Sub Widget_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Location = New System.Drawing.Point(My.Settings.widget_location.X, My.Settings.widget_location.Y)
+        Me.BackColor = My.Settings.back_color
+        Me.ForeColor = My.Settings.fore_color
         Using img As Image = Image.FromFile(logo_path)
             Channel_logo.Image = New Bitmap(img)
         End Using
@@ -183,7 +185,7 @@ Public Class widget
             If (latest.Contains(current)) Then
                 MsgBox("Up To Date")
             Else
-                Select Case MsgBox("Update Avilable for Widget" + vbNewLine + "Latest Version : " + latest + vbNewLine + "Current Version : " + current + vbNewLine + "Do you want to update now", vbCritical + vbYesNo)
+                Select Case MsgBox("Update Avilable for Widget" + vbNewLine + "Latest Version    : " + latest + vbNewLine + "Current Version : " + current + vbNewLine + "Do you want to update now", vbCritical + vbYesNo)
                     Case vbYes
                         Process.Start("Updater.exe")
                         Process.GetCurrentProcess.Kill()

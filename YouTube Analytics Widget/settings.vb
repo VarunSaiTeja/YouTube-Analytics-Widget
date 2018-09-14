@@ -23,6 +23,7 @@ Public Class settings
             formatting.Text = "Shortcuts B/M/K"
         End If
         logo_task.Text = Registry.GetValue(reg_path, "Logo Task", "Update Analytics")
+        title.Select()
     End Sub
 
     Private Sub Duration_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Duration.SelectedIndexChanged
@@ -45,6 +46,7 @@ Public Class settings
         ElseIf formatting.Text = "Shortcuts B/M/K" Then
             Registry.SetValue(reg_path, "Format", "bmk")
         End If
+        widget.Update_now()
     End Sub
 
     Private Sub Startup_CheckedChanged(sender As Object, e As EventArgs) Handles startup.CheckedChanged
@@ -95,4 +97,17 @@ Public Class settings
         Process.Start("https://www.paypal.me/varunsaiteja")
     End Sub
 
+    Private Sub Cust_back_color_Click(sender As Object, e As EventArgs) Handles Cust_back_color.Click
+        NewColorDialog.Color = widget.BackColor
+        NewColorDialog.ShowDialog()
+        widget.BackColor = NewColorDialog.Color
+        My.Settings.back_color = NewColorDialog.Color
+    End Sub
+
+    Private Sub Cust_font_color_Click(sender As Object, e As EventArgs) Handles Cust_font_color.Click
+        NewColorDialog.Color = widget.ForeColor
+        NewColorDialog.ShowDialog()
+        widget.ForeColor = NewColorDialog.Color
+        My.Settings.fore_color = NewColorDialog.Color
+    End Sub
 End Class
