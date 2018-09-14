@@ -11,5 +11,8 @@
     <Setting Name="back_color" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
     </Setting>
+    <Setting Name="widget_size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">250, 130</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

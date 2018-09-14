@@ -19,6 +19,7 @@ Public Class widget
 
     Private Sub Widget_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Location = New System.Drawing.Point(My.Settings.widget_location.X, My.Settings.widget_location.Y)
+        Me.Size = My.Settings.widget_size
         Me.BackColor = My.Settings.back_color
         Me.ForeColor = My.Settings.fore_color
         Using img As Image = Image.FromFile(logo_path)
@@ -31,6 +32,7 @@ Public Class widget
 
     Private Sub Widget_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         My.Settings.widget_location = New System.Drawing.Point(Me.Location.X, Me.Location.Y)
+        My.Settings.widget_size = Me.Size
         My.Settings.Save()
     End Sub
 
@@ -40,17 +42,17 @@ Public Class widget
         Registry.SetValue(reg_path, "Videos", videos_count.Text)
     End Sub
 
-    Private Sub ChangeLocationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangeLocationToolStripMenuItem.Click
-        If ChangeLocationToolStripMenuItem.Checked = True Then
-            FormBorderStyle = FormBorderStyle.FixedToolWindow
+    Private Sub ResizeorRelocateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ResizeorRelocateToolStripMenuItem.Click
+        If ResizeorRelocateToolStripMenuItem.Checked = True Then
+            FormBorderStyle = FormBorderStyle.Sizable
         End If
-        If ChangeLocationToolStripMenuItem.Checked = False Then
+        If ResizeorRelocateToolStripMenuItem.Checked = False Then
             FormBorderStyle = FormBorderStyle.None
         End If
     End Sub
 
     Private Sub UpdateNowToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateNowToolStripMenuItem.Click
-        update_now()
+        Update_now()
     End Sub
 
     Private Sub SettingsToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles SettingsToolStripMenuItem.Click
@@ -152,21 +154,21 @@ Public Class widget
 
     Private Sub Statistics_updater_Tick(sender As Object, e As EventArgs) Handles statistics_updater.Tick
         If time_taken = 0 Then
-            update_now()
+            Update_now()
         ElseIf time_taken = 1 And Registry.GetValue(reg_path, "Interval", "0 Hour") = "1 Hour" Then
-            update_now()
+            Update_now()
             time_taken = 0
         ElseIf time_taken = 2 And Registry.GetValue(reg_path, "Interval", "0 Hour") = "3 Hour" Then
-            update_now()
+            Update_now()
             time_taken = 0
         ElseIf time_taken = 3 And Registry.GetValue(reg_path, "Interval", "0 Hour") = "6 Hour" Then
-            update_now()
+            Update_now()
             time_taken = 0
         ElseIf time_taken = 4 And Registry.GetValue(reg_path, "Interval", "0 Hour") = "12 Hour" Then
-            update_now()
+            Update_now()
             time_taken = 0
         ElseIf time_taken = 5 And Registry.GetValue(reg_path, "Interval", "0 Hour") = "1 Day" Then
-            update_now()
+            Update_now()
             time_taken = 0
         End If
         statistics_updater.Interval = 3600000

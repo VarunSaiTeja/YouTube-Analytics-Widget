@@ -25,7 +25,7 @@ Partial Class widget
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(widget))
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ChangeLocationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ResizeorRelocateToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UpdateNowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,33 +45,33 @@ Partial Class widget
         '
         'ContextMenuStrip1
         '
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeLocationToolStripMenuItem, Me.UpdateNowToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ResizeorRelocateToolStripMenuItem, Me.UpdateNowToolStripMenuItem, Me.SettingsToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(165, 92)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(169, 92)
         '
-        'ChangeLocationToolStripMenuItem
+        'ResizeorRelocateToolStripMenuItem
         '
-        Me.ChangeLocationToolStripMenuItem.CheckOnClick = True
-        Me.ChangeLocationToolStripMenuItem.Name = "ChangeLocationToolStripMenuItem"
-        Me.ChangeLocationToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.ChangeLocationToolStripMenuItem.Text = "Change Location"
+        Me.ResizeorRelocateToolStripMenuItem.CheckOnClick = True
+        Me.ResizeorRelocateToolStripMenuItem.Name = "ResizeorRelocateToolStripMenuItem"
+        Me.ResizeorRelocateToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ResizeorRelocateToolStripMenuItem.Text = "Resize or Relocate"
         '
         'UpdateNowToolStripMenuItem
         '
         Me.UpdateNowToolStripMenuItem.Name = "UpdateNowToolStripMenuItem"
-        Me.UpdateNowToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.UpdateNowToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.UpdateNowToolStripMenuItem.Text = "Update Now"
         '
         'SettingsToolStripMenuItem
         '
         Me.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem"
-        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.SettingsToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.SettingsToolStripMenuItem.Text = "Settings"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Channel_logo
@@ -164,7 +164,7 @@ Partial Class widget
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(250, 131)
+        Me.ClientSize = New System.Drawing.Size(250, 130)
         Me.ContextMenuStrip = Me.ContextMenuStrip1
         Me.Controls.Add(Me.videos_count)
         Me.Controls.Add(Me.view_count)
@@ -187,7 +187,7 @@ Partial Class widget
     End Sub
 
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
-    Friend WithEvents ChangeLocationToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ResizeorRelocateToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Channel_logo As PictureBox
     Friend WithEvents statistics_updater As Timer
     Friend WithEvents channel_name As Label
