@@ -33,6 +33,10 @@ Public Class bye
 
             Try
                 My.Computer.FileSystem.DeleteFile(install_path + "\YouTube Analytics Widget.exe")
+                My.Computer.FileSystem.DeleteFile(install_path + "\Updater.exe")
+                My.Computer.FileSystem.DeleteFile(install_path + "\Icon.ico")
+                My.Computer.FileSystem.DeleteFile(My.Computer.FileSystem.SpecialDirectories.MyPictures + "\Channel Logo.jpg")
+                My.Computer.FileSystem.DeleteFile(My.Computer.FileSystem.SpecialDirectories.Desktop + "\YT Widget.lnk")
             Catch ex As Exception
 
             End Try
@@ -42,6 +46,8 @@ Public Class bye
                 regkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Run", True)
                 regkey.DeleteValue("YouTube Analytics Widget", False)
                 regkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\Varun", True)
+                regkey.DeleteSubKey("YouTube Analytics Widget")
+                regkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall", True)
                 regkey.DeleteSubKey("YouTube Analytics Widget")
                 regkey.Close()
             Catch ex As Exception

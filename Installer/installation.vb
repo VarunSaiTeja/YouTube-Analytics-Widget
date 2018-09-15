@@ -9,6 +9,7 @@ Public Class installation
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If Button1.Text = "Finish" Then
             Process.Start(install_path + "\YouTube Analytics Widget.exe")
+            Process.Start("https://www.youtube.com/varunteja")
             Process.GetCurrentProcess.Kill()
         End If
 
@@ -16,8 +17,30 @@ Public Class installation
             Button1.Visible = False
             title.Text = "Installing"
 
-            My.Computer.FileSystem.CopyDirectory(Application.StartupPath, install_path, True)
+            Try
+                Process.GetProcessesByName("YouTube Analytics Widget")(0).Kill()
+            Catch ex As Exception
+
+            End Try
+
             My.Computer.FileSystem.CopyFile(Application.StartupPath + "\logo.jpg", logo_path, True)
+
+            IO.File.Delete("logo.jpg")
+
+            IO.File.WriteAllBytes("YouTube Analytics Widget.exe", My.Resources.YouTube_Analytics_Widget)
+            IO.File.WriteAllBytes("Updater.exe", My.Resources.Updater)
+            IO.File.WriteAllBytes("Uninstaller.exe", My.Resources.Uninstaller)
+
+            Dim ico As Icon = My.Resources.icon
+            Dim ico_stream As System.IO.FileStream = New System.IO.FileStream("Icon.ico", System.IO.FileMode.OpenOrCreate)
+            ico.Save(ico_stream)
+            ico_stream.Close()
+            ico.Dispose()
+
+            My.Computer.FileSystem.CopyFile(Application.StartupPath + "\YouTube Analytics Widget.exe", install_path + "\YouTube Analytics Widget.exe", True)
+            My.Computer.FileSystem.CopyFile(Application.StartupPath + "\Updater.exe", install_path + "\Updater.exe", True)
+            My.Computer.FileSystem.CopyFile(Application.StartupPath + "\Uninstaller.exe", install_path + "\Uninstaller.exe", True)
+            My.Computer.FileSystem.CopyFile(Application.StartupPath + "\YouTube Analytics Widget.exe", install_path + "\Icon.ico", True)
 
             Registry.SetValue(reg_path, "Channel ID", ChannelDetails.id.Text)
             Registry.SetValue(reg_path, "Channel Name", ChannelDetails.gbox.Text)
@@ -63,9 +86,9 @@ Public Class installation
             reg_path = "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\YouTube Analytics Widget"
             Registry.SetValue(reg_path, "Publisher", "Varun")
             Registry.SetValue(reg_path, "DisplayName", "YouTube Analytics Widget")
-            Registry.SetValue(reg_path, "DisplayVersion", "1.0")
-            Registry.SetValue(reg_path, "DisplayIcon", install_path + "\icon.ico")
-            Registry.SetValue(reg_path, "UninstallString", install_path + "Uninstaller.exe")
+            Registry.SetValue(reg_path, "DisplayVersion", "1.0.0.0")
+            Registry.SetValue(reg_path, "DisplayIcon", install_path + "\Icon.ico")
+            Registry.SetValue(reg_path, "UninstallString", install_path + "\Uninstaller.exe")
             Registry.SetValue(reg_path, "URLInfoAbout", "https://YouTube.com/VarunTeja")
 
             Dim wsh As New WshShell
@@ -74,8 +97,13 @@ Public Class installation
             Dim myhsrt As IWshShortcut = wsh.CreateShortcut(path)
             myhsrt.TargetPath = install_path + "\YouTube Analytics Widget.exe"
             myhsrt.Description = "Launches YouTube Analytics Widget"
-            myhsrt.IconLocation = install_path + "\icon.ico"
+            myhsrt.IconLocation = install_path + "\Icon.ico"
             myhsrt.Save()
+
+            IO.File.Delete("YouTube Analytics Widget.exe")
+            IO.File.Delete("Uninstaller.exe")
+            IO.File.Delete("Updater.exe")
+            IO.File.Delete("Icon.ico")
 
             title.Text = "Installation Done"
             Button1.Visible = True

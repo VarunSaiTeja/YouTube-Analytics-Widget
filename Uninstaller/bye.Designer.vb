@@ -53,7 +53,7 @@ Partial Class bye
         Me.tip.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.tip.Location = New System.Drawing.Point(51, 41)
         Me.tip.Name = "tip"
-        Me.tip.Size = New System.Drawing.Size(369, 84)
+        Me.tip.Size = New System.Drawing.Size(341, 84)
         Me.tip.TabIndex = 2
         Me.tip.Text = resources.GetString("tip.Text")
         '
@@ -67,6 +67,7 @@ Partial Class bye
         Me.Controls.Add(Me.title)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "bye"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "YouTube Analytics Widget Uninstaller"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -10,7 +10,7 @@ Public Class settings
             widget.Get_snip()
             widget.Get_stat()
         Catch ex As Exception
-            MsgBox("Check Your Internet Connection")
+            MsgBox("Check Your Channel ID")
         End Try
     End Sub
 
