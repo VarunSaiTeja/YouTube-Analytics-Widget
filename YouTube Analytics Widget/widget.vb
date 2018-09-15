@@ -184,9 +184,7 @@ Public Class widget
             web_responsed = web_requester.GetResponse
             stream_reader = New StreamReader(web_responsed.GetResponseStream)
             latest = stream_reader.ReadToEnd
-            If (latest.Contains(current)) Then
-                MsgBox("Up To Date")
-            Else
+            If Not (latest.Contains(current)) Then
                 Select Case MsgBox("Update Avilable for Widget" + vbNewLine + "Latest Version    : " + latest + vbNewLine + "Current Version : " + current + vbNewLine + "Do you want to update now", vbCritical + vbYesNo)
                     Case vbYes
                         Process.Start("Updater.exe")
