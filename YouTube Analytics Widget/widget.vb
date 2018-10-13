@@ -14,6 +14,8 @@ Public Class widget
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
     Dim logo_path As String = My.Computer.FileSystem.SpecialDirectories.MyPictures + "\Channel Logo.jpg"
     Dim logo_task As String
+    Dim notify_enabled As Boolean = False
+    Dim notify_text As String
     ' format "number" to diplay number with commas
     ' format "bmk" to display number in m/k
 
@@ -26,6 +28,14 @@ Public Class widget
             Channel_logo.Image = New Bitmap(img)
         End Using
         channel_name.Text = Registry.GetValue(reg_path, "Channel Name", "Varun Teja")
+        If (Registry.GetValue(reg_path, "Notify Icon", True) = True) Then
+            notify_enabled = True
+        End If
+        If (notify_enabled = True) Then
+            NotifyIcon1.Visible = True
+            NotifyIcon1.Icon = New Icon("icon.ico")
+            NotifyIcon1.Text = "YouTube Analytics Widget"
+        End If
         statistics_updater.Start()
         check_update.Start()
     End Sub
@@ -67,7 +77,11 @@ Public Class widget
         Try
             Get_stat()
             Update_registry()
+            If (Registry.GetValue(reg_path, "Update Notification", True)) Then
+                Send_notification()
+            End If
         Catch ex As Exception
+            MsgBox(ex.ToString)
             sub_count.Text = Registry.GetValue(reg_path, "Subscribers", "0")
             view_count.Text = Registry.GetValue(reg_path, "Views", "0")
             videos_count.Text = Registry.GetValue(reg_path, "Videos", "0")
@@ -75,6 +89,24 @@ Public Class widget
                 Channel_logo.Image = New Bitmap(img)
             End Using
         End Try
+    End Sub
+
+    Public Sub Send_notification()
+        NotifyIcon1.BalloonTipTitle = "Updated Channel Analytics"
+        notify_text = Nothing
+        NotifyIcon1.BalloonTipText = Nothing
+        If (Registry.GetValue(reg_path, "Subs In Notification", "True") = True) Then
+            notify_text = notify_text + "Subs   = " + sub_count.Text
+        End If
+        If (Registry.GetValue(reg_path, "Views In Notification", "True") = True) Then
+            notify_text = notify_text + vbNewLine + "Views  = " + view_count.Text
+        End If
+        If (Registry.GetValue(reg_path, "Videos In Notification", "True") = True) Then
+            notify_text = notify_text + vbNewLine + "Videos  = " + videos_count.Text
+        End If
+        NotifyIcon1.BalloonTipText = notify_text
+        NotifyIcon1.ShowBalloonTip(1000)
+
     End Sub
 
     Public Sub Get_snip()
@@ -213,6 +245,48 @@ Public Class widget
             Process.Start("https://www.youtube.com/dashboard?o=U")
         ElseIf Registry.GetValue(reg_path, "Logo Task", Nothing) = "Open Channel" Then
             Process.Start("https://www.youtube.com/channel/" + Registry.GetValue(reg_path, "Channel ID", "UCyq7mspndOnlqR41axhhT8A"))
+        End If
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        MsgBox("Subscribers =  " + sub_count.Text)
+    End Sub
+
+    Private Sub ViewsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewsToolStripMenuItem.Click
+        MsgBox("Views =   " + view_count.Text)
+    End Sub
+
+    Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
+        If (Registry.GetValue(reg_path, "Icon Double Click", "Update Analytics") = "Nothing") Then
+
+        ElseIf (Registry.GetValue(reg_path, "Icon Double Click", "Update Analytics") = "Update Analytics") Then
+            Update_now()
+        ElseIf (Registry.GetValue(reg_path, "Icon Double Click", "Update Analytics") = "Show Settings") Then
+            settings.Show()
+        ElseIf (Registry.GetValue(reg_path, "Icon Double Click", "Update Analytics") = "Show Notify Settings") Then
+            NotifySettings.Show()
+        End If
+    End Sub
+
+    Private Sub NotifyIcon1_BalloonTipClicked(sender As Object, e As EventArgs) Handles NotifyIcon1.BalloonTipClicked
+        If (Registry.GetValue(reg_path, "Notification Click", "Nothing") = "Nothing") Then
+        ElseIf (Registry.GetValue(reg_path, "Notification Click", "Nothing") = "Open Analytics") Then
+            Process.Start("https://www.youtube.com/analytics?o=U")
+        ElseIf (Registry.GetValue(reg_path, "Notification Click", "Nothing") = "Open Creator Studio") Then
+            Process.Start("https://www.youtube.com/dashboard?o=U")
+        ElseIf (Registry.GetValue(reg_path, "Notification Click", "Nothing") = "Open Channel") Then
+            Process.Start("https://www.youtube.com/channel/" + Registry.GetValue(reg_path, "Channel ID", "UCyq7mspndOnlqR41axhhT8A"))
+        End If
+    End Sub
+
+    Private Sub NotifyIcon1_Click(sender As Object, e As EventArgs) Handles NotifyIcon1.Click
+        If (Registry.GetValue(reg_path, "Notify Icon Click", "Nothing") = Nothing) Then
+        ElseIf (Registry.GetValue(reg_path, "Notify Icon Click", "Update Analytics") = Nothing) Then
+            Update_now()
+        ElseIf (Registry.GetValue(reg_path, "Notify Icon Click", "Show Settings") = Nothing) Then
+            settings.Show()
+        ElseIf (Registry.GetValue(reg_path, "Notify Icon Click", "Show Notify Settings") = Nothing) Then
+            NotifySettings.Show()
         End If
     End Sub
 End Class

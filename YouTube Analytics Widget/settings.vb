@@ -24,6 +24,7 @@ Public Class settings
         End If
         logo_task.Text = Registry.GetValue(reg_path, "Logo Task", "Update Analytics")
         title.Select()
+
     End Sub
 
     Private Sub Duration_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Duration.SelectedIndexChanged
@@ -109,5 +110,11 @@ Public Class settings
         NewColorDialog.ShowDialog()
         widget.ForeColor = NewColorDialog.Color
         My.Settings.fore_color = NewColorDialog.Color
+    End Sub
+
+    Private Sub Set_notify_Click(sender As Object, e As EventArgs) Handles Set_notify.Click
+        Me.Hide()
+        NotifySettings.Show()
+        Me.Close()
     End Sub
 End Class

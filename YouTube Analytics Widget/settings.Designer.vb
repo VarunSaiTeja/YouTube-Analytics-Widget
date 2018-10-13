@@ -46,6 +46,7 @@ Partial Class settings
         Me.NewColorDialog = New System.Windows.Forms.ColorDialog()
         Me.Cust_font_color = New System.Windows.Forms.Button()
         Me.Cust_back_color = New System.Windows.Forms.Button()
+        Me.Set_notify = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -134,7 +135,7 @@ Partial Class settings
         Me.startup.CheckState = System.Windows.Forms.CheckState.Checked
         Me.startup.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.startup.ForeColor = System.Drawing.Color.White
-        Me.startup.Location = New System.Drawing.Point(131, 319)
+        Me.startup.Location = New System.Drawing.Point(131, 237)
         Me.startup.Name = "startup"
         Me.startup.Size = New System.Drawing.Size(125, 17)
         Me.startup.TabIndex = 17
@@ -248,7 +249,7 @@ Partial Class settings
         Me.Cust_font_color.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cust_font_color.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cust_font_color.ForeColor = System.Drawing.Color.White
-        Me.Cust_font_color.Location = New System.Drawing.Point(131, 275)
+        Me.Cust_font_color.Location = New System.Drawing.Point(149, 278)
         Me.Cust_font_color.Name = "Cust_font_color"
         Me.Cust_font_color.Size = New System.Drawing.Size(121, 26)
         Me.Cust_font_color.TabIndex = 30
@@ -261,19 +262,33 @@ Partial Class settings
         Me.Cust_back_color.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cust_back_color.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cust_back_color.ForeColor = System.Drawing.Color.White
-        Me.Cust_back_color.Location = New System.Drawing.Point(131, 231)
+        Me.Cust_back_color.Location = New System.Drawing.Point(11, 278)
         Me.Cust_back_color.Name = "Cust_back_color"
         Me.Cust_back_color.Size = New System.Drawing.Size(121, 26)
         Me.Cust_back_color.TabIndex = 29
         Me.Cust_back_color.Text = "Background Color"
         Me.Cust_back_color.UseVisualStyleBackColor = True
         '
+        'Set_notify
+        '
+        Me.Set_notify.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Set_notify.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Set_notify.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Set_notify.ForeColor = System.Drawing.Color.White
+        Me.Set_notify.Location = New System.Drawing.Point(288, 278)
+        Me.Set_notify.Name = "Set_notify"
+        Me.Set_notify.Size = New System.Drawing.Size(121, 26)
+        Me.Set_notify.TabIndex = 31
+        Me.Set_notify.Text = "Notify"
+        Me.Set_notify.UseVisualStyleBackColor = True
+        '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Crimson
-        Me.ClientSize = New System.Drawing.Size(422, 353)
+        Me.ClientSize = New System.Drawing.Size(422, 324)
+        Me.Controls.Add(Me.Set_notify)
         Me.Controls.Add(Me.Cust_font_color)
         Me.Controls.Add(Me.Cust_back_color)
         Me.Controls.Add(Me.MenuStrip1)
@@ -325,4 +340,5 @@ Partial Class settings
     Friend WithEvents NewColorDialog As ColorDialog
     Friend WithEvents Cust_font_color As Button
     Friend WithEvents Cust_back_color As Button
+    Friend WithEvents Set_notify As Button
 End Class
