@@ -39,8 +39,13 @@ Partial Class widget
         Me.views = New System.Windows.Forms.Label()
         Me.subscribers = New System.Windows.Forms.Label()
         Me.check_update = New System.Windows.Forms.Timer(Me.components)
+        Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.UpdateNowToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.Channel_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ContextMenuStrip1
@@ -159,6 +164,30 @@ Partial Class widget
         '
         Me.check_update.Interval = 10000
         '
+        'NotifyIcon1
+        '
+        Me.NotifyIcon1.ContextMenuStrip = Me.ContextMenuStrip2
+        Me.NotifyIcon1.Text = "NotifyIcon1"
+        Me.NotifyIcon1.Visible = True
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateNowToolStripMenuItem1, Me.ExitToolStripMenuItem1})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(181, 70)
+        '
+        'UpdateNowToolStripMenuItem1
+        '
+        Me.UpdateNowToolStripMenuItem1.Name = "UpdateNowToolStripMenuItem1"
+        Me.UpdateNowToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.UpdateNowToolStripMenuItem1.Text = "Update Now"
+        '
+        'ExitToolStripMenuItem1
+        '
+        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem1.Text = "Exit"
+        '
         'widget
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -181,6 +210,7 @@ Partial Class widget
         Me.Text = "YouTube Analytics Widget"
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.Channel_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -201,4 +231,8 @@ Partial Class widget
     Friend WithEvents SettingsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents check_update As Timer
+    Friend WithEvents NotifyIcon1 As NotifyIcon
+    Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
+    Friend WithEvents UpdateNowToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
 End Class
