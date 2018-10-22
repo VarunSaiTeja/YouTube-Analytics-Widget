@@ -41,8 +41,8 @@ Partial Class widget
         Me.check_update = New System.Windows.Forms.Timer(Me.components)
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ViewsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UpdateNowToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.Channel_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip2.SuspendLayout()
@@ -172,21 +172,21 @@ Partial Class widget
         '
         'ContextMenuStrip2
         '
-        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ViewsToolStripMenuItem})
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UpdateNowToolStripMenuItem1, Me.ExitToolStripMenuItem1})
         Me.ContextMenuStrip2.Name = "ContextMenuStrip2"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(135, 48)
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(181, 70)
         '
-        'ToolStripMenuItem1
+        'UpdateNowToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.ToolStripMenuItem1.Text = "Subscribers"
+        Me.UpdateNowToolStripMenuItem1.Name = "UpdateNowToolStripMenuItem1"
+        Me.UpdateNowToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.UpdateNowToolStripMenuItem1.Text = "Update Now"
         '
-        'ViewsToolStripMenuItem
+        'ExitToolStripMenuItem1
         '
-        Me.ViewsToolStripMenuItem.Name = "ViewsToolStripMenuItem"
-        Me.ViewsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ViewsToolStripMenuItem.Text = "Views"
+        Me.ExitToolStripMenuItem1.Name = "ExitToolStripMenuItem1"
+        Me.ExitToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ExitToolStripMenuItem1.Text = "Exit"
         '
         'widget
         '
@@ -233,6 +233,6 @@ Partial Class widget
     Friend WithEvents check_update As Timer
     Friend WithEvents NotifyIcon1 As NotifyIcon
     Friend WithEvents ContextMenuStrip2 As ContextMenuStrip
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents ViewsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents UpdateNowToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem1 As ToolStripMenuItem
 End Class

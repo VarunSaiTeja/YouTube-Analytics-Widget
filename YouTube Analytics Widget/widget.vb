@@ -33,7 +33,7 @@ Public Class widget
         End If
         If (notify_enabled = True) Then
             NotifyIcon1.Visible = True
-            NotifyIcon1.Icon = New Icon("icon.ico")
+            NotifyIcon1.Icon = Me.Icon
             NotifyIcon1.Text = "YouTube Analytics Widget"
         End If
         statistics_updater.Start()
@@ -248,14 +248,6 @@ Public Class widget
         End If
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
-        MsgBox("Subscribers =  " + sub_count.Text)
-    End Sub
-
-    Private Sub ViewsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewsToolStripMenuItem.Click
-        MsgBox("Views =   " + view_count.Text)
-    End Sub
-
     Private Sub NotifyIcon1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles NotifyIcon1.MouseDoubleClick
         If (Registry.GetValue(reg_path, "Icon Double Click", "Update Analytics") = "Nothing") Then
 
@@ -288,5 +280,13 @@ Public Class widget
         ElseIf (Registry.GetValue(reg_path, "Notify Icon Click", "Show Notify Settings") = Nothing) Then
             NotifySettings.Show()
         End If
+    End Sub
+
+    Private Sub UpdateNowToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles UpdateNowToolStripMenuItem1.Click
+        Update_now()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem1.Click
+        Process.GetCurrentProcess.Kill()
     End Sub
 End Class
