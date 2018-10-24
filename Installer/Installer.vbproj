@@ -73,7 +73,7 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>925124439AC7C411FA84E216FE04E786BA0BC63D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F55E31B7FB6C434ADA70C6EDB6A3A9A83772BF5D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Installer_TemporaryKey.pfx</ManifestKeyFile>

@@ -68,7 +68,7 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>49B504AF31415CA02E2009F60BC7D6747BACF350</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A59BF6F03E4633B76D438EA5F1EA0930D3A50BAF</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>YouTube Analytics Widget_TemporaryKey.pfx</ManifestKeyFile>

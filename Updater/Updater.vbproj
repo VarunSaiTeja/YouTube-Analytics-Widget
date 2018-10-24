@@ -68,7 +68,7 @@
     <ApplicationIcon>update.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E0B41983AB5ABB6BABC43B30862EB0E6D755326E</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>A7CDFBE2A1A904238DDCAA321E0FEFCED22FC5DC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Updater_TemporaryKey.pfx</ManifestKeyFile>

@@ -69,7 +69,7 @@
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>7F66C65E02A4C609BA4756188AA62A29848174F1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>1FB8F7AA55A84383E0CA267A4083807D4EFB2C56</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Uninstaller_TemporaryKey.pfx</ManifestKeyFile>
