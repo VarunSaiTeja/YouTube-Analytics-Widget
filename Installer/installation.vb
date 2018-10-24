@@ -86,7 +86,7 @@ Public Class installation
             reg_path = "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\YouTube Analytics Widget"
             Registry.SetValue(reg_path, "Publisher", "Varun")
             Registry.SetValue(reg_path, "DisplayName", "YouTube Analytics Widget")
-            Registry.SetValue(reg_path, "DisplayVersion", "1.0.0.0")
+            Registry.SetValue(reg_path, "DisplayVersion", Application.ProductVersion)
             Registry.SetValue(reg_path, "DisplayIcon", install_path + "\Icon.ico")
             Registry.SetValue(reg_path, "UninstallString", install_path + "\Uninstaller.exe")
             Registry.SetValue(reg_path, "URLInfoAbout", "https://YouTube.com/VarunTeja")

@@ -81,7 +81,6 @@ Public Class widget
                 Send_notification()
             End If
         Catch ex As Exception
-            MsgBox(ex.ToString)
             sub_count.Text = Registry.GetValue(reg_path, "Subscribers", "0")
             view_count.Text = Registry.GetValue(reg_path, "Views", "0")
             videos_count.Text = Registry.GetValue(reg_path, "Videos", "0")

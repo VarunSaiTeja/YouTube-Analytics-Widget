@@ -108,8 +108,8 @@ Public Class ChannelDetails
 
     Private Sub ChannelDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            get_stat()
-            get_snip()
+            Get_stat()
+            Get_snip()
         Catch ex As Exception
             MsgBox("Oops Check Your Internet Connection")
             Process.GetCurrentProcess.Kill()

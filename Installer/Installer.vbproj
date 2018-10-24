@@ -28,7 +28,7 @@
     <SupportUrl>https://github.com/varunsaiteja</SupportUrl>
     <ProductName>YouTube Analytics Widget Installer</ProductName>
     <PublisherName>Varun</PublisherName>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
