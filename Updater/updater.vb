@@ -19,7 +19,7 @@ Public Class Updater
             File.Delete(path)
         End If
 
-        downloader.DownloadFile("https://github.com/VarunSaiTeja/YouTube-Analytics-Widget/raw/master/setup.exe", path)
+        downloader.DownloadFile("https://github.com/VarunSaiTeja/YouTube-Analytics-Widget/raw/master/Widget%20Installer.exe", path)
 
         Process.Start(path)
         Process.GetCurrentProcess.Kill()

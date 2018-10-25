@@ -25,8 +25,6 @@ Public Class installation
 
             My.Computer.FileSystem.CopyFile(Application.StartupPath + "\logo.jpg", logo_path, True)
 
-            IO.File.Delete("logo.jpg")
-
             IO.File.WriteAllBytes("YouTube Analytics Widget.exe", My.Resources.YouTube_Analytics_Widget)
             IO.File.WriteAllBytes("Updater.exe", My.Resources.Updater)
             IO.File.WriteAllBytes("Uninstaller.exe", My.Resources.Uninstaller)
@@ -104,6 +102,7 @@ Public Class installation
             IO.File.Delete("Uninstaller.exe")
             IO.File.Delete("Updater.exe")
             IO.File.Delete("Icon.ico")
+            IO.File.Delete("logo.jpg")
 
             title.Text = "Installation Done"
             Button1.Visible = True
