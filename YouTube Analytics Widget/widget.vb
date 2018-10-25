@@ -78,7 +78,7 @@ Public Class widget
             Get_stat()
             Update_registry()
             If (Registry.GetValue(reg_path, "Update Notification", True)) Then
-                Send_notification()
+                Send_notification("Channel Analytics Updated")
             End If
         Catch ex As Exception
             sub_count.Text = Registry.GetValue(reg_path, "Subscribers", "0")
@@ -87,11 +87,12 @@ Public Class widget
             Using img As Image = Image.FromFile(logo_path)
                 Channel_logo.Image = New Bitmap(img)
             End Using
+            Send_notification("Failed : Showing Previous Analytics")
         End Try
     End Sub
 
-    Public Sub Send_notification()
-        NotifyIcon1.BalloonTipTitle = "Updated Channel Analytics"
+    Public Sub Send_notification(ByVal Status As String)
+        NotifyIcon1.BalloonTipTitle = Status
         notify_text = Nothing
         NotifyIcon1.BalloonTipText = Nothing
         If (Registry.GetValue(reg_path, "Subs In Notification", "True") = True) Then
