@@ -15,14 +15,11 @@ Public Class Updater
     End Sub
 
     Public Sub Start_Update()
-        Dim link As String
-        Dim client As WebClient = New WebClient
-        link = client.DownloadString("https://raw.githubusercontent.com/VarunSaiTeja/YouTube-Analytics-Widget/master/Updater/Update%20Link")
         If File.Exists(path) Then
             File.Delete(path)
         End If
 
-        downloader.DownloadFile(link, path)
+        downloader.DownloadFile("https://github.com/VarunSaiTeja/YouTube-Analytics-Widget/raw/master/setup.exe", path)
 
         Process.Start(path)
         Process.GetCurrentProcess.Kill()
