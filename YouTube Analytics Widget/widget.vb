@@ -216,7 +216,7 @@ Public Class widget
             If Not (latest.Contains(current)) Then
                 Select Case MsgBox("Update Avilable for Widget" + vbNewLine + "Latest Version    : " + latest + vbNewLine + "Current Version : " + current + vbNewLine + "Do you want to update now", vbCritical + vbYesNo)
                     Case vbYes
-                        Process.Start("Updater.exe")
+                        Process.Start(My.Computer.FileSystem.SpecialDirectories.ProgramFiles + "\Varun\YouTube Analytics Widget\Updater.exe")
                         Process.GetCurrentProcess.Kill()
                     Case vbNo
                         MsgBox("You will notify later regarding this update")

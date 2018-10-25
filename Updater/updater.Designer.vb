@@ -23,7 +23,7 @@ Partial Class Updater
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(updater))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Updater))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.update_now = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
@@ -42,14 +42,15 @@ Partial Class Updater
         '
         Me.update_now.Interval = 1000
         '
-        'updater
+        'Updater
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(351, 156)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "updater"
+        Me.Name = "Updater"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Updater"
         Me.ResumeLayout(False)
         Me.PerformLayout()
