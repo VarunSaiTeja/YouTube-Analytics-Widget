@@ -212,12 +212,7 @@ Public Class widget
             Dim current As String = Application.ProductVersion
             Dim latest As String
             Dim client As WebClient = New WebClient
-            latest = client.DownloadString("Link Comes Here")
-            link = "http://tiny.cc/ytwidver"
-            web_requester = WebRequest.Create(link)
-            web_responsed = web_requester.GetResponse
-            stream_reader = New StreamReader(web_responsed.GetResponseStream)
-            latest = stream_reader.ReadToEnd
+            latest = client.DownloadString("https://raw.githubusercontent.com/VarunSaiTeja/YouTube-Analytics-Widget/master/Updater/Update%20Version")
             If Not (latest.Contains(current)) Then
                 Select Case MsgBox("Update Avilable for Widget" + vbNewLine + "Latest Version    : " + latest + vbNewLine + "Current Version : " + current + vbNewLine + "Do you want to update now", vbCritical + vbYesNo)
                     Case vbYes

@@ -17,7 +17,7 @@ Public Class Updater
     Public Sub Start_Update()
         Dim link As String
         Dim client As WebClient = New WebClient
-        link = client.DownloadString("Link Comes Here")
+        link = client.DownloadString("https://raw.githubusercontent.com/VarunSaiTeja/YouTube-Analytics-Widget/master/Updater/Update%20Link")
         If File.Exists(path) Then
             File.Delete(path)
         End If
