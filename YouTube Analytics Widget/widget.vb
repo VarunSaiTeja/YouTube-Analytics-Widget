@@ -211,6 +211,8 @@ Public Class widget
         Try
             Dim current As String = Application.ProductVersion
             Dim latest As String
+            Dim client As WebClient = New WebClient
+            latest = client.DownloadString("Link Comes Here")
             link = "http://tiny.cc/ytwidver"
             web_requester = WebRequest.Create(link)
             web_responsed = web_requester.GetResponse

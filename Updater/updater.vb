@@ -11,15 +11,20 @@ Public Class Updater
 
     Private Sub Update_now_Tick(sender As Object, e As EventArgs) Handles update_now.Tick
         update_now.Stop()
+        Start_Update()
+    End Sub
 
+    Public Sub Start_Update()
+        Dim link As String
+        Dim client As WebClient = New WebClient
+        link = client.DownloadString("Link Comes Here")
         If File.Exists(path) Then
             File.Delete(path)
         End If
 
-        downloader.DownloadFile("http://tiny.cc/ytwidlatest", path)
+        downloader.DownloadFile(link, path)
 
         Process.Start(path)
         Process.GetCurrentProcess.Kill()
-
     End Sub
 End Class
