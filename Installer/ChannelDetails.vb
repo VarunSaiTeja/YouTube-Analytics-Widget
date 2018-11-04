@@ -15,7 +15,7 @@ Public Class ChannelDetails
 
     Private Sub Id_set_Click(sender As Object, e As EventArgs) Handles id_set.Click
         user_id = id.Text
-        get_update()
+        Get_update()
         If id_correct = 1 Then
             nextform.Visible = True
         Else
@@ -31,8 +31,8 @@ Public Class ChannelDetails
 
     Public Sub Get_update()
         Try
-            get_snip()
-            get_stat()
+            Get_snip()
+            Get_stat()
             id_correct = 1
         Catch ex As Exception
             id.Text = Nothing

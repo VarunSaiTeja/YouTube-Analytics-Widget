@@ -31,11 +31,11 @@ Public Class settings
         If Duration.Text = "1 Hour" Then
             Registry.SetValue(reg_path, "Interval", "1 Hour")
         ElseIf Duration.Text = "3 Hours" Then
-            Registry.SetValue(reg_path, "Interval", "3 Hour")
+            Registry.SetValue(reg_path, "Interval", "3 Hours")
         ElseIf Duration.Text = "6 Hours" Then
-            Registry.SetValue(reg_path, "Interval", "6 Hour")
+            Registry.SetValue(reg_path, "Interval", "6 Hours")
         ElseIf Duration.Text = "12 Hours" Then
-            Registry.SetValue(reg_path, "Interval", "12 Hour")
+            Registry.SetValue(reg_path, "Interval", "12 Hours")
         ElseIf Duration.Text = "1 Day" Then
             Registry.SetValue(reg_path, "Interval", "1 Day")
         End If
