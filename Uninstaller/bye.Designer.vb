@@ -51,11 +51,13 @@ Partial Class bye
         '
         Me.tip.AutoSize = True
         Me.tip.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.tip.Location = New System.Drawing.Point(51, 41)
+        Me.tip.Location = New System.Drawing.Point(55, 61)
         Me.tip.Name = "tip"
-        Me.tip.Size = New System.Drawing.Size(341, 84)
+        Me.tip.Size = New System.Drawing.Size(378, 63)
         Me.tip.TabIndex = 2
-        Me.tip.Text = resources.GetString("tip.Text")
+        Me.tip.Text = "                      After uninstalling this software" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "         My YouTube Chann" &
+    "el will open in your browser" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "       Subscribe to my channel and support me litt" &
+    "le bit"
         '
         'bye
         '

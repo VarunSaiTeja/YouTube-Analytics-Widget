@@ -12,6 +12,7 @@ Public Class ChannelDetails
     Dim reg_path As String = "HKEY_CURRENT_USER\Software\Varun\YouTube Analytics Widget"
     Dim user_id As String = "UCyq7mspndOnlqR41axhhT8A"
     Dim id_correct As Int16 = 0
+    Dim temp_logo As String = My.Computer.FileSystem.SpecialDirectories.Temp + "\YouTube Analytics Widget Installer" + "\Channel Logo.jpg"
 
     Private Sub Id_set_Click(sender As Object, e As EventArgs) Handles id_set.Click
         user_id = id.Text
@@ -51,11 +52,11 @@ Public Class ChannelDetails
         Dim channel_title = SnipJson("items")(0)("snippet")("title")
         Dim logo_link = SnipJson("items")(0)("snippet")("thumbnails")("default")("url")
         gbox.Text = channel_title
-        If File.Exists("logo.jpg") Then
-            File.Delete("logo.jpg")
+        If File.Exists(temp_logo) Then
+            File.Delete(temp_logo)
         End If
-        My.Computer.Network.DownloadFile(logo_link, "logo.jpg")
-        Using img As Image = Image.FromFile("logo.jpg")
+        My.Computer.Network.DownloadFile(logo_link, temp_logo)
+        Using img As Image = Image.FromFile(temp_logo)
             logo.Image = New Bitmap(img)
         End Using
     End Sub

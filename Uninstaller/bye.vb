@@ -19,7 +19,7 @@ Public Class bye
 
     Private Sub Button_Click(sender As Object, e As EventArgs) Handles button.Click
         If button.Text = "Finish" Then
-            Process.Start("https://tiny.cc/ytwidun")
+            Process.Start("https://www.youtube.com/varunteja")
             Process.GetCurrentProcess.Kill()
         End If
 
@@ -55,7 +55,7 @@ Public Class bye
             End Try
 
             title.Text = "Uninstallation Done"
-            tip.Text = "By clicking on finish" + Environment.NewLine + "My Google form will open" + Environment.NewLine + "Please give feedback via that form"
+            tip.Text = "By clicking on finish" + Environment.NewLine + "My YouTube Channel will open" + Environment.NewLine + "Please subscribe to my youtube channel"
             button.Text = "Finish"
         End If
     End Sub
