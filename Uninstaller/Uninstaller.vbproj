@@ -27,7 +27,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://giuthub.com/varunsaiteja</SupportUrl>
     <PublisherName>Varun</PublisherName>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
