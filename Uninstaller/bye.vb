@@ -61,9 +61,13 @@ Public Class bye
     End Sub
 
     Private Sub Bye_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
 New_process:
         If (IsAdmin()) Then
-
+            If Not (Application.ProductName = "Uninstaller") Then
+                Process.Start(install_path + "/Uninstaller.exe")
+                Process.GetCurrentProcess.Kill()
+            End If
         Else
             Try
                 p.StartInfo.FileName = Application.ExecutablePath
